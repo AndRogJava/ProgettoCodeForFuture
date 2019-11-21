@@ -16,6 +16,7 @@ public class DatiCorsi implements Serializable {
 	public DatiCorsi (){
 		
 	}
+	
 
 	public int getCodcorso() {
 		return codcorso;
