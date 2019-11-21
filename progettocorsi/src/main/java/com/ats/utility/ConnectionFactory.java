@@ -8,7 +8,7 @@ import com.ats.exception.DaoException;
 
 public class ConnectionFactory {
 	private static Connection conn;
-	private static ResourceBundle rb = ResourceBundle.getBundle("risorse/info");
+	private static ResourceBundle rb = ResourceBundle.getBundle("resources/info");
 	private static String stringConnection = rb.getString("jdbc.stringConnection");
 	private static String idConnection=rb.getString("jdbc.username");
 	private static String passConnection=rb.getString("jdbc.password");
