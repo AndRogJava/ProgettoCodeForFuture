@@ -20,7 +20,7 @@ public class DaoCorsista implements IDaoCorsista{
 			conn = ConnectionFactory.getInstance();
 		}
 
-		public void addCorsista(DatiCorsisti corsista) throws ClassNotFoundException, DaoException {
+		public void addCorsista(DatiCorsisti corsista) throws DaoException {
 			
 			try {
 				String query = "insert into DATI_CORSISTI" + "values(?,?,?,?)";
@@ -36,79 +36,99 @@ public class DaoCorsista implements IDaoCorsista{
 				conn.close();
 			}
 			catch (SQLException e) {
-				e.printStackTrace();
-			}		
+				throw new DaoException(e.getMessage());
+			}	
 		}
 
-		public void updateCorsista(DatiCorsisti corsista) throws SQLException, DaoException {
+		public void updateCorsista(DatiCorsisti corsista) throws DaoException {
 			
-			String query = "update DATI_CORSISTI set nomecorsista=?, cognomecorsista=?, precedentiformativi=? where codcorsista=?";
-			ps = conn.prepareStatement(query);
+			try {
+				String query = "update DATI_CORSISTI set nomecorsista=?, cognomecorsista=?, precedentiformativi=? where codcorsista=?";
+				ps = conn.prepareStatement(query);
 			
-			ps.setString(1, corsista.getNomecorsista());
-			ps.setString(2, corsista.getCognomecorsista());
-			ps.setString(3, corsista.getPrecedentiformativi());
-			ps.setInt(4, corsista.getCodcorsista());
+				ps.setString(1, corsista.getNomecorsista());
+				ps.setString(2, corsista.getCognomecorsista());
+				ps.setString(3, corsista.getPrecedentiformativi());
+				ps.setInt(4, corsista.getCodcorsista());
 			
-			ps.executeUpdate();
-			ps.close();
-			conn.close();
-			
-		}
-
-		public void deleteCorsista(int codcorsista) throws SQLException, DaoException {
-			
-			String query = "delete from DATI_CORSISTI where codcorsista=?";
-			ps = conn.prepareStatement(query);
-			
-			ps.setInt(1, codcorsista);
-			
-			ps.executeUpdate();
-			ps.close();
-			conn.close();
-			
-		}
-
-		public LinkedList<DatiCorsisti> selectAll() throws SQLException {
-			
-			String query = "select * from DATI_CORSISTI";
-			
-			LinkedList <DatiCorsisti> daticorsisti = new LinkedList<DatiCorsisti>();
-			ps = conn.prepareStatement(query);
-			rs = ps.executeQuery();
-			
-			while (rs.next()) {
-				DatiCorsisti tmp = new DatiCorsisti();
-				tmp.setNomecorsista(rs.getString("nomecorsista"));
-				tmp.setCognomecorsista(rs.getString("cognomecorsista"));
-				tmp.setCodcorsista(rs.getInt("codcorsista"));
-				tmp.setPrecedentiformativi(rs.getString("precedentiformativi"));
-				
-				daticorsisti.add(tmp);
+				ps.executeUpdate();
+				ps.close();
+				conn.close();
 			}
-			return daticorsisti;
+			catch (SQLException e) {
+				throw new DaoException(e.getMessage());
+			}
 		}
 
-		public DatiCorsisti getCorsistaById(int codcorsista) throws SQLException {
+		public void deleteCorsista(int codcorsista) throws DaoException {
 			
-			String query = "select * from DATI_CORSISTI where codcorsista=?";
+			try {
+				String query = "delete from DATI_CORSISTI where codcorsista=?";
+				ps = conn.prepareStatement(query);
 			
-			ps = conn.prepareStatement(query);
-			ps.setInt(1,  codcorsista);
-			rs = ps.executeQuery();
-			DatiCorsisti tmp = null;
+				ps.setInt(1, codcorsista);
 			
-			while (rs.next()) {
-				tmp = new DatiCorsisti();
-				tmp.setNomecorsista(rs.getString("nomecorsista"));
-				tmp.setCognomecorsista(rs.getString("cognomecorsista"));
-				tmp.setCodcorsista(rs.getInt("codcorsista"));
-				tmp.setPrecedentiformativi(rs.getString("precedentiformativi"));
-				
+				ps.executeUpdate();
+				ps.close();
+				conn.close();
 			}
-			return tmp;
-		}	
+			catch (SQLException e) {
+				throw new DaoException(e.getMessage());
+			}
+		}
+
+		public LinkedList<DatiCorsisti> selectAll() throws DaoException {
 			
+			try {
+				String query = "select * from DATI_CORSISTI";
+			
+				LinkedList <DatiCorsisti> daticorsisti = new LinkedList<DatiCorsisti>();
+				ps = conn.prepareStatement(query);
+				rs = ps.executeQuery();
+			
+				while (rs.next()) {
+					DatiCorsisti tmp = new DatiCorsisti();
+					tmp.setNomecorsista(rs.getString("nomecorsista"));
+					tmp.setCognomecorsista(rs.getString("cognomecorsista"));
+					tmp.setCodcorsista(rs.getInt("codcorsista"));
+					tmp.setPrecedentiformativi(rs.getString("precedentiformativi"));
+				
+					daticorsisti.add(tmp);
+				}
+				return daticorsisti;
+			
+				}
+				catch (SQLException e) {
+					throw new DaoException(e.getMessage());
+				}
+			
+		}
+			
+
+		public DatiCorsisti getCorsistaById(int codcorsista) throws DaoException {
+			
+			try {
+				String query = "select * from DATI_CORSISTI where codcorsista=?";
+			
+				ps = conn.prepareStatement(query);
+				ps.setInt(1,  codcorsista);
+				rs = ps.executeQuery();
+				DatiCorsisti tmp = null;
+			
+				while (rs.next()) {
+					tmp = new DatiCorsisti();
+					tmp.setNomecorsista(rs.getString("nomecorsista"));
+					tmp.setCognomecorsista(rs.getString("cognomecorsista"));
+					tmp.setCodcorsista(rs.getInt("codcorsista"));
+					tmp.setPrecedentiformativi(rs.getString("precedentiformativi"));
+				
+				}
+				return tmp;
+				}
+				catch (SQLException e) {
+					throw new DaoException(e.getMessage());
+				}
+		}
 }
 		
 		
