@@ -7,7 +7,7 @@ import com.ats.exception.DaoException;
 import com.ats.model.DatiAmministratori;
 
 public interface IDaoDatiAmministratori {
-	// TODO: handle exception
+
 	public void addAmministratore (DatiAmministratori  amministratore) throws ClassNotFoundException, DaoException;
     public void updateAmministratore(DatiAmministratori  amministratore)throws SQLException, DaoException;
 	public void deleteAmministratore (int codadmin)throws SQLException, DaoException;
