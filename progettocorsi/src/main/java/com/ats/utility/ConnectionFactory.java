@@ -13,7 +13,7 @@ public class ConnectionFactory {
 	private static String idConnection=rb.getString("jdbc.username");
 	private static String passConnection=rb.getString("jdbc.password");
 	
-	
+	//COMMENTO PER PROVA UPLOAD
 	
 	private ConnectionFactory() throws DaoException{
 		
