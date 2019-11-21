@@ -32,7 +32,7 @@ public class DaoStatistiche {
 				
 				prepStatement= conn.prepareStatement(query);
 				resultset = prepStatement.executeQuery();
-				
+			
 				while(resultset.next()){
 					count = resultset.getInt("count");
 				}

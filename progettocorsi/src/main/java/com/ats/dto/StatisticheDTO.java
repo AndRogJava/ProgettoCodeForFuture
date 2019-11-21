@@ -17,6 +17,7 @@ public class StatisticheDTO {
 		return corso;
 	}
 
+	
 	public void setCorso(DatiCorsi corso) {
 		this.corso = corso;
 	}
