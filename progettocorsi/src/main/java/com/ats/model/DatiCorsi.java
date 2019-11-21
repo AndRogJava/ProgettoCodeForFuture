@@ -13,7 +13,7 @@ public class DatiCorsi implements Serializable {
 	private String commenticorso;
 	private String  aulacorso;
 	
-	public DatiCorsi() {
+	public DatiCorsi () {
 		
 	}
 
