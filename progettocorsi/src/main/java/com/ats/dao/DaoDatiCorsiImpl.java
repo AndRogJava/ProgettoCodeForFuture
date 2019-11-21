@@ -22,7 +22,7 @@ public class DaoDatiCorsiImpl implements IDaoDatiCorsi {
 		conn = ConnectionFactory.getInstance();
 	}
 
-	public void addCorso(DatiCorsi corso) throws ClassNotFoundException, DaoException {
+	public void addCorso(DatiCorsi corso) throws  DaoException {
 		Date data_iniziocorso = Date.valueOf(corso.getData_iniziocorso());
 		Date data_finecorso = Date.valueOf(corso.getData_finecorso());
 		try{

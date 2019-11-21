@@ -22,7 +22,7 @@ public class DaoDatiAmministratoriImpl implements IDaoDatiAmministratori {
 	}
 	
 
-	public void addAmministratore(DatiAmministratori amministratore) throws ClassNotFoundException, DaoException {
+	public void addAmministratore(DatiAmministratori amministratore) throws DaoException {
 		try{
 			String query="insert into DATI_AMMINISTRATORI "
 					+ "values(?,?,?)";
