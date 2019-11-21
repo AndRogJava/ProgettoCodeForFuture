@@ -3,7 +3,7 @@ package com.ats.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class DatiCorsi implements Serializable{
+public class DatiCorsi implements Serializable {
 	private int codcorso;
 	private int coddocente;
 	private String nomecorso;
@@ -13,7 +13,7 @@ public class DatiCorsi implements Serializable{
 	private String commenticorso;
 	private String  aulacorso;
 	
-	public DatiCorsi() {
+	public DatiCorsi(){
 		
 	}
 
