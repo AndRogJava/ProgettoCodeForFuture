@@ -128,7 +128,7 @@ public class DaoCorsista implements IDaoCorsista{
 				catch (SQLException e) {
 					throw new DaoException(e.getMessage());
 				}
-		}
+		} 
 }
 		
 		

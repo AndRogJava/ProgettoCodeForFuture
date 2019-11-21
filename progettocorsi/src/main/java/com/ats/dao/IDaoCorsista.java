@@ -17,4 +17,4 @@ public interface IDaoCorsista {
 	
 	public DatiCorsisti getCorsistaById (int codcorsista) throws DaoException;
 
-}
+} 
