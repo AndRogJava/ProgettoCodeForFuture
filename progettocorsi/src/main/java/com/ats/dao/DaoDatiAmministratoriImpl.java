@@ -47,7 +47,7 @@ public class DaoDatiAmministratoriImpl implements IDaoDatiAmministratori {
 	}
 	
 
-	public void updateAmministratore(DatiAmministratori amministratore) throws SQLException, DaoException {
+	public void updateAmministratore(DatiAmministratori amministratore) throws  DaoException {
 		try {
 			String query="update DATI_AMMINISTRATORI set nomeadmin=?, cognomeadmin=? where codadmin=? ";
 		
@@ -71,7 +71,7 @@ public class DaoDatiAmministratoriImpl implements IDaoDatiAmministratori {
 	
 		
 
-	public void deleteAmministratore(int codadmin) throws SQLException, DaoException {
+	public void deleteAmministratore(int codadmin) throws DaoException {
 		try {
 			String query="delete from DATI_AMMINISTRATORI where codadmin=?";
 			conn= ConnectionFactory.getInstance();
@@ -91,7 +91,7 @@ public class DaoDatiAmministratoriImpl implements IDaoDatiAmministratori {
 		
 	
 
-	public LinkedList<DatiAmministratori> getallAmministratori() throws SQLException, DaoException {
+	public LinkedList<DatiAmministratori> getallAmministratori() throws  DaoException {
 		try {
 			String query="select * from DATI_AMMINISTRATORI";
 			LinkedList <DatiAmministratori> listaAmministratori = new LinkedList<DatiAmministratori>();
@@ -116,13 +116,13 @@ public class DaoDatiAmministratoriImpl implements IDaoDatiAmministratori {
 		
 			return listaAmministratori;
 		}catch (SQLException sql) {
-			
+			// TODO: handle exception
 			throw new DaoException(sql.getMessage());
 		}
 	}
 	
 
-	public DatiAmministratori getAmministratorebyUsername(int codadmin) throws SQLException, DaoException {
+	public DatiAmministratori getAmministratorebyUsername(int codadmin) throws  DaoException {
 		
 		try {
 
