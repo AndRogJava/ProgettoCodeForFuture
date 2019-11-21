@@ -63,7 +63,7 @@ public class DaoDatiAmministratoriImpl implements IDaoDatiAmministratori {
 		 prepStatement.close();
 		conn.close();
 	}catch (SQLException sql) {
-		// TODO: handle exception
+		
 		throw new DaoException(sql.getMessage());
 	}
 
@@ -116,7 +116,7 @@ public class DaoDatiAmministratoriImpl implements IDaoDatiAmministratori {
 		
 			return listaAmministratori;
 		}catch (SQLException sql) {
-			// TODO: handle exception
+			
 			throw new DaoException(sql.getMessage());
 		}
 	}
