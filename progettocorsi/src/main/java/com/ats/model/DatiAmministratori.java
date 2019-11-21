@@ -17,7 +17,7 @@ public class DatiAmministratori implements Serializable{
 	public String getNomeadmin() {
 		return nomeadmin;
 	}
-	public void setCognomeadmin(String Cognomeadmin) {
+	public void setCognomeadmin(String cognomeadmin) {
 		this.cognomeadmin=cognomeadmin;
 	}
 	public String getCognomeadmin() {
