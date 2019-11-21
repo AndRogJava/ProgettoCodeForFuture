@@ -9,7 +9,7 @@
 <body>
 <!--  -->
 
-<header><jsp:include page="header.jsp" /></header>
+<!-- <header><jsp:include page="header.jsp" /></header>-->
 	<div>
 	    
 		<h1><font color="darkgreen">Hai eseguito con successo il logout</font></h1>
@@ -20,7 +20,7 @@
 <%
 		session.invalidate();
 	%>
-<footer><jsp:include page="Footer.jsp"/></footer>
+<!-- <footer><jsp:include page="Footer.jsp"/></footer>-->
 	</body>
 
 
