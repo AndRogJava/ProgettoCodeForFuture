@@ -26,9 +26,13 @@ public class DaoCorsista implements IDaoCorsista{
 				String query = "insert into DATI_CORSISTI" + "values(?,?,?,?)";
 				ps = conn.prepareStatement(query);
 				
+				OrdineIdGenerator oig=new OrdineIdGenerator();
+				int newId = oig.getNextId();
+				ps.setInt(3,newId);
+				
 				ps.setString(1, corsista.getNomecorsista());
 				ps.setString(2, corsista.getCognomecorsista());
-				ps.setInt(3, corsista.getCodcorsista());
+				//ps.setInt(3, corsista.getCodcorsista());
 				ps.setString(4, corsista.getPrecedentiformativi());
 				
 				ps.executeUpdate();
@@ -46,6 +50,7 @@ public class DaoCorsista implements IDaoCorsista{
 				String query = "update DATI_CORSISTI set nomecorsista=?, cognomecorsista=?, precedentiformativi=? where codcorsista=?";
 				ps = conn.prepareStatement(query);
 			
+				
 				ps.setString(1, corsista.getNomecorsista());
 				ps.setString(2, corsista.getCognomecorsista());
 				ps.setString(3, corsista.getPrecedentiformativi());
@@ -65,7 +70,8 @@ public class DaoCorsista implements IDaoCorsista{
 			try {
 				String query = "delete from DATI_CORSISTI where codcorsista=?";
 				ps = conn.prepareStatement(query);
-			
+				
+				
 				ps.setInt(1, codcorsista);
 			
 				ps.executeUpdate();
@@ -88,6 +94,9 @@ public class DaoCorsista implements IDaoCorsista{
 			
 				while (rs.next()) {
 					DatiCorsisti tmp = new DatiCorsisti();
+					
+					
+				
 					tmp.setNomecorsista(rs.getString("nomecorsista"));
 					tmp.setCognomecorsista(rs.getString("cognomecorsista"));
 					tmp.setCodcorsista(rs.getInt("codcorsista"));
@@ -117,6 +126,9 @@ public class DaoCorsista implements IDaoCorsista{
 			
 				while (rs.next()) {
 					tmp = new DatiCorsisti();
+					
+					
+				
 					tmp.setNomecorsista(rs.getString("nomecorsista"));
 					tmp.setCognomecorsista(rs.getString("cognomecorsista"));
 					tmp.setCodcorsista(rs.getInt("codcorsista"));
