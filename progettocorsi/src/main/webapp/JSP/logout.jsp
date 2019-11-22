@@ -9,18 +9,18 @@
 <body>
 
 
-<!-- <header><jsp:include page="header.jsp" /></header>-->
+<header><jsp:include page="header.jsp" /></header>
 	<div>
 	    
-		<h1><font color="darkgreen">Hai eseguito con successo il logout</font></h1>
-		<a href="home.jsp">Torna alla Home Page</a>
+		<h1><font color="#0c6914">Hai eseguito con successo il logout</font></h1>
+		<a href="index.jsp">Torna alla Home Page</a>
 
 
 </div>
 <%
 		session.invalidate();
 	%>
-<!-- <footer><jsp:include page="Footer.jsp"/></footer>-->
+<footer><jsp:include page="footer.jsp"/></footer>
 	</body>
 
 
