@@ -28,9 +28,13 @@ public class DaoCorsista implements IDaoCorsista{
 		try {
 		
 			ps = conn.prepareStatement(query);
+
+			OrdineIdGenerator oig=new OrdineIdGenerator();
+				int newId = oig.getNextId();
+				ps.setInt(3,newId);
 			ps.setString(1, corsista.getNomecorsista());
 			ps.setString(2, corsista.getCognomecorsista());
-			ps.setInt(3, corsista.getCodcorsista());
+			//ps.setInt(3, corsista.getCodcorsista());
 			ps.setString(4, corsista.getPrecedentiformativi());
 
 			ps.executeUpdate();
