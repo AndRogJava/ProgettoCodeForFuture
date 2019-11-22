@@ -13,18 +13,16 @@
 
 </head>
 <body>
+
 <form action="/ListaServlet" method="GET">
-<% 
-out.println(session.getAttribute("lista"));
- %>
+
 <table>
 	<thead>
 		<tr>
 			<b><h2><td>NOME CORSISTA</td></h2></b>
-			<b><h2><td>COGNOME CORSISTA</td></h2></b>
-			<b><h2><td>PRECEDENTI FORMATIVI</td></h2></b>
+			<b><h2><td>COGNOME CORSISTA</td></h2></b>	
 			<b><h2><td>CODICE CORSISTA</td></h2></b>
-			<b><h2><td>CORSO</td></h2></b>
+		
 			
 		</tr>
 	</thead>
@@ -32,17 +30,14 @@ out.println(session.getAttribute("lista"));
 	 <c:forEach items="${lista}" var="current">
 	 
         <tr>
-          <td><c:out value="${current.nomecorsista}" />
+          <td><a href="ProfiloCorsista.jsp"><c:out value="${current.nomecorsista}" /></a>
            <td><c:out value="${current.cognomecorsista}" /> 
-            <td><c:out value="${current.precedentiformativi}" />
-            
              <td id="codice"><c:out value="${current.codcorsista}" />
-             
-    
-	
-	
-
+       
  </tr>
+ 		
+ 	
+ 		
  </c:forEach>
  
   </table>            

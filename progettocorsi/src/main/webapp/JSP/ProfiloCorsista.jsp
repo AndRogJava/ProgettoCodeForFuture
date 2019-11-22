@@ -38,10 +38,12 @@ color: black;
 }
 </style>
 
-<%out.println(session.getAttribute("lista"));
-%>
-
 <body>
+
+<form action="/ListaServlet" method="GET">
+<% 
+out.println(session.getAttribute("lista"));
+ %>
 
 <table>
 <thead>
@@ -50,6 +52,7 @@ color: black;
 <td>Nome</td>
 <td>Cognome</td>  
 <td>Precedenti Formativi</td>
+<td>Corso</td>
 
 </tr>
 </thead>
@@ -59,6 +62,7 @@ color: black;
 <td><c:out value="${items.nomecorsista}" /></td>
 <td><c:out value="${items.cognomecorsista}" /></td>
 <td><c:out value="${items.precedentiformativi}" /></td>
+<td><c:out value="${items.nomecorso}" /></td>
 
 </tr>
      </c:forEach>
