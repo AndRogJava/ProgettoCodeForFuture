@@ -17,16 +17,16 @@ public class DaoDatiCorsiImplService {
 		daoDCI.addCorso(corso);
 		
 	}
-    public void updateCorso(DatiCorsi corso)throws SQLException, DaoException{
+    public void updateCorso(DatiCorsi corso)throws  DaoException{
     	daoDCI.updateCorso(corso);
     }
-	public void deleteCorso (int codcorso)throws SQLException, DaoException{
+	public void deleteCorso (int codcorso)throws  DaoException{
 		daoDCI.deleteCorso(codcorso);
 	}
-	public LinkedList<DatiCorsi> getallCorsi() throws SQLException, DaoException{
+	public LinkedList<DatiCorsi> getallCorsi() throws  DaoException{
 		return daoDCI.getallCorsi();
 	}
-	public DatiCorsi getCorsobyCodCorso (int codcorso) throws SQLException, DaoException{
+	public DatiCorsi getCorsobyCodCorso (int codcorso) throws  DaoException{
 		return daoDCI.getCorsobyCodCorso(codcorso);
 	}
 
