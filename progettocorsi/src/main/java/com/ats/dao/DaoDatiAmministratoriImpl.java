@@ -113,7 +113,9 @@ public class DaoDatiAmministratoriImpl implements IDaoDatiAmministratori {
 				
 				
 			}
-		
+			prepStatement.executeUpdate();
+			prepStatement.close();
+			conn.close();
 			return listaAmministratori;
 		}catch (SQLException sql) {
 			// TODO: handle exception
@@ -140,6 +142,9 @@ public class DaoDatiAmministratoriImpl implements IDaoDatiAmministratori {
 				amministratore.setCognomeadmin(resultset.getString("cognomeadmin"));
 				amministratore.setCodadmin(resultset.getInt("codadmin"));
 		}
+			prepStatement.executeUpdate();
+			prepStatement.close();
+			conn.close();
 			return amministratore;
 		    }
 		catch (SQLException sql)  {
