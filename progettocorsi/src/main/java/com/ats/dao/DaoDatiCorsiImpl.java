@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.LinkedList;
 
 import com.ats.exception.DaoException;
@@ -25,10 +26,11 @@ public class DaoDatiCorsiImpl implements IDaoDatiCorsi {
 	public void addCorso(DatiCorsi corso) throws  DaoException {
 		Date data_iniziocorso = Date.valueOf(corso.getData_iniziocorso());
 		Date data_finecorso = Date.valueOf(corso.getData_finecorso());
+		
+		String query="insert into DATI_CORSI "
+				+ "values(?,?,?,?,?,?,?,?)";
 		try{
-			String query="insert into DATI_CORSI "
-					+ "values(?,?,?,?,?,?,?,?)";
-			conn= ConnectionFactory.getInstance();
+			
 			prepStatement= conn.prepareStatement(query);
 			prepStatement.setInt(1,corso.getCodcorso());
 			prepStatement.setInt(2,corso.getCoddocente());
@@ -39,15 +41,17 @@ public class DaoDatiCorsiImpl implements IDaoDatiCorsi {
 			prepStatement.setDate(7,data_iniziocorso);
 			prepStatement.setDate(8,data_finecorso);
 			
+		
 			int numeroRighe = prepStatement.executeUpdate();
 			if(numeroRighe > 0) {
 				System.out.println("Corso aggiunto con successo!");
 			}
+			prepStatement.executeUpdate();
 			prepStatement.close();
 			conn.close();
-		}catch (SQLException sql) {
+		}catch (SQLException e) {
 			
-			throw new DaoException(sql.getMessage());
+			throw new DaoException(e.getMessage());
 		}
 	
 		

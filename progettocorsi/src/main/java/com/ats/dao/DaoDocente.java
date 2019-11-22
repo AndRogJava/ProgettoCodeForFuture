@@ -21,9 +21,9 @@ public class DaoDocente implements IDaoDocente{
 	}
 
 	public void addDocente(DatiDocenti docente) throws DaoException {
-		
+		String query = "insert into DATI_DOCENTI values(?,?,?,?)";
 		try {
-			String query = "insert into DATI_DOCENTI" + "values(?,?,?,?)";
+			
 			ps = conn.prepareStatement(query);
 			
 			ps.setString(1, docente.getNomedocente());
@@ -36,7 +36,7 @@ public class DaoDocente implements IDaoDocente{
 			conn.close();
 		}
 		catch (SQLException e) {
-			throw new DaoException();
+			throw new DaoException(e.getMessage());
 		}	
 	}
 
