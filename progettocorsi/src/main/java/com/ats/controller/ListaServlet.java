@@ -27,7 +27,7 @@ public class ListaServlet extends HttpServlet {
         
     }
 
-//sdakfjkf
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
 //		String nomeIns=request.getParameter("Nomeadmin");
 //		int codIns=request.getParameter("Codadmin");
