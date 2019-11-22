@@ -86,7 +86,7 @@ public class DaoDatiCorsiImpl implements IDaoDatiCorsi {
 		
 	}
 
-	public void deleteCorso(int codcorso) throws SQLException, DaoException {
+	public void deleteCorso(int codcorso) throws DaoException {
 		try {
 			String query="delete from DATI_CORSI where codcorso=?";
 			conn= ConnectionFactory.getInstance();
@@ -106,7 +106,7 @@ public class DaoDatiCorsiImpl implements IDaoDatiCorsi {
 		
 	
 
-	public LinkedList<DatiCorsi> getallCorsi() throws SQLException, DaoException {
+	public LinkedList<DatiCorsi> getallCorsi() throws DaoException {
 		
 		try {
 			String query="select * from DATI_CORSI";
@@ -140,7 +140,7 @@ public class DaoDatiCorsiImpl implements IDaoDatiCorsi {
 		}
 	}
 
-	public DatiCorsi getCorsobyCodCorso (int codcorso) throws SQLException, DaoException {
+	public DatiCorsi getCorsobyCodCorso (int codcorso) throws  DaoException {
 		try {
 
 			String query="select * from DATI_CORSI where codcorso=?";
