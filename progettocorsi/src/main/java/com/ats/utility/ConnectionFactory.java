@@ -16,13 +16,15 @@ public class ConnectionFactory {
 	private static String idConnection=rb.getString("jdbc.username");
 	private static String passConnection=rb.getString("jdbc.password");
 	
-	//COMMENTO PER PROVA UPLOAD
 	
 	private ConnectionFactory() throws DaoException{
 		
 		try {
+			 Class.forName("oracle.jdbc.driver.OracleDriver");                   
 			conn = DriverManager.getConnection(stringConnection,idConnection,passConnection);
+		
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new DaoException();
 		}
 	}

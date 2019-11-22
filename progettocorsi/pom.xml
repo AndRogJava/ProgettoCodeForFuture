@@ -8,17 +8,17 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>progettocorsi Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	 <build>
-	 <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.properties</include>
-                </includes>
-            </resource>
-           </resources>
-           <finalName>progettocorsi</finalName>
-       </build>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+		</resources>
+		<finalName>progettocorsi</finalName>
+	</build>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -40,11 +40,6 @@
 			<scope>system</scope>
 			<systemPath>${basedir}\src\main\webapp\WEB-INF\lib\ojdbc8.jar</systemPath>
 		</dependency>
-		
-
-
-
-
 	</dependencies>
 
 

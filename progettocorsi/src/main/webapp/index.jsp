@@ -17,7 +17,7 @@
 <br>
 <b class="serif">Codice admin: </b><input class="serif" placeholder ="codice admin" type = "text" name="codadmin" required> <br>
 <br>
-
+<a href="ListaServlet">clicca qui</a>
 
 
 </form>
