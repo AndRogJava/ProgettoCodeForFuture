@@ -1,17 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
+<head>
 <meta charset="ISO-8859-1">
 <title>Homepage</title>
+</head>
 <body>
-<h1> Benevenuto Admin!</h1>
-<h2> Per accedere alla tua pagina di getione dei corsi effettua il login</h2>
+<header><jsp:include page="/JSP/header.jsp"/></header>
+<h1 class="serif"> Benevenuto Admin!</h1>
+<h2 class="serif"> Per accedere alla tua pagina di gestione dei corsi effettua il login</h2>
 
 <form action="LoginServlet" method="post">
 
-<b>Username:</b><input placeholder ="username" type = "text" name="username_inserito" required> <br>
+<b class="serif">Nome admin: </b><input class="serif" placeholder ="nome admin" type = "text" name="nomeadmin" required> <br>
 <br>
-<b>Codice admin:</b><input placeholder ="codice admin" type = "text" name="codadmin_inserito" required> <br>
+<b class="serif">Codice admin: </b><input class="serif" placeholder ="codice admin" type = "text" name="codadmin" required> <br>
 <br>
-<input  type="button" value="Login" name ="bottone">
+
+
 
 </form>
 </body>
