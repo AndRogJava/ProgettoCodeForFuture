@@ -68,7 +68,7 @@ public class IscrizioneServlet extends HttpServlet {
 	session.setAttribute("UtenteCorrente",Corsistatrovato);
 	rd= request.getRequestDispatcher("lista.jsp");
 	rd.forward(request, response);
-}
+} //ciao
 }
 	
 
