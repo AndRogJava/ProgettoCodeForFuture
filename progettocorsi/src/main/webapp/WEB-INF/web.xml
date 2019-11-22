@@ -3,6 +3,7 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
+<<<<<<< HEAD
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
   	<servlet-name>IscrizioneServlet</servlet-name>
@@ -14,6 +15,9 @@
   	<servlet-name>IscrizioneServlet</servlet-name>
   	<url-pattern>/IscrizioneServlet</url-pattern>
   </servlet-mapping>
+=======
+  <display-name>Header.css</display-name>
+>>>>>>> branch 'master' of https://github.com/AndRogJava/ProgettoCodeForFuture.git
   
   	
 </web-app>
