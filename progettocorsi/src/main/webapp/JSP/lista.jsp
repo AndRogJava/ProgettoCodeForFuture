@@ -24,6 +24,7 @@ out.println(session.getAttribute("lista"));
 			<b><h2><td>COGNOME CORSISTA</td></h2></b>
 			<b><h2><td>PRECEDENTI FORMATIVI</td></h2></b>
 			<b><h2><td>CODICE CORSISTA</td></h2></b>
+			<b><h2><td>CORSO</td></h2></b>
 			
 		</tr>
 	</thead>
@@ -34,7 +35,9 @@ out.println(session.getAttribute("lista"));
           <td><c:out value="${current.nomecorsista}" />
            <td><c:out value="${current.cognomecorsista}" /> 
             <td><c:out value="${current.precedentiformativi}" />
+            
              <td id="codice"><c:out value="${current.codcorsista}" />
+             
     
 	
 	
