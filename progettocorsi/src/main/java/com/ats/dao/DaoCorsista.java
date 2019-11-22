@@ -94,8 +94,13 @@ public class DaoCorsista implements IDaoCorsista{
 					tmp.setPrecedentiformativi(rs.getString("precedentiformativi"));
 				
 					daticorsisti.add(tmp);
+					
 				}
+				ps.executeUpdate();
+				ps.close();
+				conn.close();
 				return daticorsisti;
+				
 			
 				}
 				catch (SQLException e) {
@@ -123,6 +128,9 @@ public class DaoCorsista implements IDaoCorsista{
 					tmp.setPrecedentiformativi(rs.getString("precedentiformativi"));
 				
 				}
+				ps.executeUpdate();
+				ps.close();
+				conn.close();
 				return tmp;
 				}
 				catch (SQLException e) {

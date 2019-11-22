@@ -19,7 +19,7 @@ import com.ats.service.CorsistaService;
 @WebServlet("/ListaServlet")
 public class ListaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
        
     
     public ListaServlet() {
@@ -42,7 +42,7 @@ public class ListaServlet extends HttpServlet {
 			listaTutti = cs.selectAll();
 		} catch (DaoException e) {
 			session.setAttribute("erroreDao", "Error occurred during ListView");
-			rd= request.getRequestDispatcher("PagError.jsp");
+		  rd= request.getRequestDispatcher("PagError.jsp");
 			rd.forward(request, response);
 		}
 		
