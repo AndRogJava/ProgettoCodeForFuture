@@ -11,8 +11,7 @@
 
 <ul>
   <li><a class="serif" href="#lista">Corsi Attivi</a></li>
-  <li><a class="serif" href="#Statistiche">Statistiche</a></li>
-  <li class="serif" style="float:right"><a class="active" href="#login">Login</a></li>
+
   <% String nome =(String)session.getAttribute("nomeadmin");
 	        if (nome!=null) {
 	        out.println (nome); %>

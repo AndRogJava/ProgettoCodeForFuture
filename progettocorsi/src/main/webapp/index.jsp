@@ -7,7 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>Homepage</title>
 </head>
-<body>
+<body class="img">
 
 <header><jsp:include page="/JSP/header.jsp"/></header>
 <h1 style="color:#0c6914" class="serif"> Benevenuto Admin!</h1>
