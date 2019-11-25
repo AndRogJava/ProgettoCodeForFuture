@@ -14,13 +14,10 @@
 
 <header><jsp:include page="header.jsp"/></header>
 
-
-
- 
  <form action="RemoveServlet" method="post"> 
  
  <input type="submit" name="bottone" value="Lista Corsi aggiornata"/>
-
+  
  </form>
  <% 
  session.getAttribute("listaCorsi");
