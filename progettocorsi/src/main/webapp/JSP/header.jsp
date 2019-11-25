@@ -10,20 +10,22 @@
 <body>
 
 <ul>
-  <li><a class="serif" href="#lista">Corsi Attivi</a></li>
+
+  <li><a class="serif" href="lista.jsp">Corsi Attivi</a></li>
 
   <% String nome =(String)session.getAttribute("nomeadmin");
-	        if (nome!=null) {
-	        out.println (nome); %>
-	        <li class="serif" style="float:right"><a class="active" href="#nomeadmin"><%=nome%></a></li>   
+	        if (nome!=null) { %>
+	        <li class="serif" style="float:right"><a class="active"><%=nome%></a></li>   
 	        <%
 	        }%>
                        
-  <% String codiceadmin =(String)session.getAttribute("codiceadmin");
-	        if (codiceadmin!=null){%>
-	        <li class="serif" style="float:right"><a class="active" href="#logout">Logout</a></li>
+  <% Integer codadmin =(Integer)session.getAttribute("codadmin");
+	        if (nome!=null && codadmin!=0){%>
+	        <li class="serif" style="float:right"><a class="active" href="logout.jsp">Logout</a></li>
+	        <li class="serif"><a href="statistiche.jsp">Statistiche</a></li>
 	     <% } %>
-  
+
+
   
 </ul>
 </body>
