@@ -53,7 +53,7 @@ System.out.print(session.getAttribute("listaCorsi"));
                 <td><c:out value="${current.aulacorso}" /> 
 
 <td><a  href="<c:url value="RemoveServlet"><c:param name="corsoCanc" value="${current.codcorso}"/>
-      
+        
       </c:url>"><input type="button" name="bottone" value="Elimina" /></a>  
       
       </td>
