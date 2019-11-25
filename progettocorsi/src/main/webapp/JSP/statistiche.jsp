@@ -13,6 +13,7 @@
 <title>Statistiche</title>
 </head>
 <body>
+<header><jsp:include page="/JSP/header.jsp"/></header>
 
 <form action="StatisticheServlet" method="GET">
 
@@ -67,8 +68,7 @@
 		<tr>
 			<td>Nome</td>
 			<td>Cognome</td>
-			<td>Codice </td>
-			<td>Precedenti formativi </td>
+			<td>Codice</td>
 		</tr>
 	</thead>
 	<%  session.getAttribute("listaCorsisti"); %>
@@ -76,12 +76,12 @@
     <c:forEach items="${listaCorsisti}" var="current"> 
 
        <tr>
-          <td><c:out value="${current.nomecorsista}" /> 
-          <% String nomeCorsista = (current.nomecorsista);  %>
-          <% session.setAttribute("nomeCorsista", nomeCorsista); %> 
+          <td><a href="ProfiloCorsista.jsp"><c:out value="${current.nomecorsista}" /></a> 
+           <c:param name="codcorsista" value="${current.codcorsista}"/>
+           
            <td><c:out value="${current.cognomecorsista}" /> 
-            <td><c:out value="${current.codcorsista}" />
-             <td><c:out value="${current.precedentiformativi}" />	
+           <td id="codice"><c:out value="${current.codcorsista}" />     
+             
         </tr>
       </c:forEach>
     
@@ -92,5 +92,6 @@
 
 </form>
 
+<footer><jsp:include page="/JSP/footer.jsp"/></footer>
 </body>
 </html>

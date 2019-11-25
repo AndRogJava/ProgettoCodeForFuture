@@ -106,13 +106,30 @@ public class StatisticheServlet extends HttpServlet {
 		System.out.println("listaCorsisti" + listaCorsisti);
 		rd=request.getRequestDispatcher("statistiche.jsp");
 		rd.forward(request, response);
+		
+		int codiceCorsista = Integer.parseInt((String)request.getParameter("codcorsista"));
+		DatiCorsisti corsista = new DatiCorsisti();
+		
+		 try {
+			 corsista = cs.getCorsistaById(codiceCorsista);
+			
+			if (corsista!=null) {
+				
+				cs.getCorsistaById(codiceCorsista);
+				rd = request.getRequestDispatcher("JSP/ProfiloCorsista.jsp");				
+			}
+		} catch (DaoException e) {
+			
+			e.printStackTrace();
+		}
+		 
+	}
 				
 //		VII.  Docente che può tenere più tipologie di corso
 				
 //		VIII. Corsi con posti disponibili
 		
 		
-	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
