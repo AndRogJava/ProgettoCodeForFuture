@@ -1,7 +1,7 @@
 package com.ats.controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 		try {
 			as = new DatiAmministratoriService();
 		} catch (DaoException e1) {
-			// TODO Auto-generated catch block
+			
 			e1.printStackTrace();
 		}
 		DatiAmministratori amministratore = new DatiAmministratori();

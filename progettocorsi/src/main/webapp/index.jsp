@@ -16,7 +16,7 @@
 <form action="LoginServlet" method="POST">
 
 <b style="color:#0c6914" class="serif">Nome admin: </b><input class="italic" class="serif" placeholder ="nome admin" type = "text" name="nomeadmin" required> <br>
-
+<br>
 <b style="color:#0c6914" class="serif">Codice admin: </b><input class="italic" class="serif" placeholder ="codice admin" type = "text" name="codadmin" required> <br>
 <br>
 <input type="submit" value="Login">
