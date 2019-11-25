@@ -92,7 +92,7 @@ public class DaoStatistiche {
 		
 	}
 	
-//	VII.  Docente che può tenere più tipologie di corso
+
 	public DatiDocenti docentePiuCorsi() throws DaoException{
 		DatiDocenti docente = new DatiDocenti();
 		
