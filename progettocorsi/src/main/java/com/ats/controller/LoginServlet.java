@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 			if (amministratore!=null  && amministratore.getCodadmin()==codice && amministratore.getNomeadmin().equalsIgnoreCase(nomeIns)) {
 				session.setAttribute("nomeadmin", nomeIns);		
 				session.setAttribute("codadmin", codice);
-				rd = request.getRequestDispatcher("JSP/lista.jsp");
+				rd = request.getRequestDispatcher("lista.jsp");
 				rd.forward(request,response);
 
 			}else  {
