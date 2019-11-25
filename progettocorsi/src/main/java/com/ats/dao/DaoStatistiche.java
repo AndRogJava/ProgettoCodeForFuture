@@ -68,7 +68,7 @@ public class DaoStatistiche {
 	}
 	
 
-//	V.    Numero di commenti presenti
+//	V.    Numero di commenti presenti --
 	public int numeroCommenti() throws DaoException{
 		int commenti = 0;
 		
