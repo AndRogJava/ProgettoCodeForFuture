@@ -113,15 +113,17 @@ public class daoTest {
 	//TEST STATISTICHE
 			
 			StatisticheDTO sdto = new StatisticheDTO();
-			sdto.setCorsisti(c2);
-			sdto.setCorso(datc);
-			sdto.setDocenti(d1);
+
 			
 			DaoStatistiche ds = new DaoStatistiche();
 			//System.out.println(ds.corsistiTotali());
 			//System.out.println(ds.durataMediaCorsi());
 			//System.out.println(ds.numeroCommenti());
-			System.out.println(ds.docentePiuCorsi());
+					System.out.println(ds.docentePiuCorsi());
+			//System.out.println(ds.corsoPiuFrequentato());
+			//System.out.println(ds.dataInizioUltimoCorso());
+					//System.out.println(ds.docentiPerNomeCorsi("Informatica"));
+			//mgfkugqe
 	}
 	
 }
