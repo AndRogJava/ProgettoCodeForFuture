@@ -26,31 +26,31 @@
   <tr>
     <th> -- </th>
     <th>Statistiche aggiornate</th>
-
   </tr>
+  
   <tr>
     <td>Numero corsisti totali: </td>
-    <td><% Integer intero = Integer.parseInt((String)(session.getAttribute("corsistiTot"))); %></td>
-    
+    <td><% Integer intero = Integer.parseInt((String)(session.getAttribute("corsistiTot"))); %></td>   
   </tr>
+  
   <tr>
     <td>Corso più frequentato: </td>
-    <td> <% %> </td>
-    
+    <td> <% String corsoPiuFreq = (String)session.getAttribute("corso"); %> </td>
   </tr>
   <tr>
+  
     <td>Data di inizio dell'ultimo corso: </td>
-    <td> <% %> </td>
-
+    <td> <% LocalDate dataUltCorso = (LocalDate)session.getAttribute("data"); %> </td>
   </tr>
+  
   <tr>
     <td> Durata media dei corsi ( in giorni lavorativi ) </td>
-    <td><% %></td>
-
+    <td><% Double durataMedia = (Double)session.getAttribute("media"); %></td>
   </tr>
+  
   <tr>
     <td>Numero di commenti presenti: </td>
-    <td><% %></td>
+    <td><% Integer commentiTotali = Integer.parseInt((String)(session.getAttribute("commentiTot"))); %></td>
 
   </tr>
  
