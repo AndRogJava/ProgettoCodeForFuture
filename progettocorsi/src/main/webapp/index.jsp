@@ -17,10 +17,18 @@
 
 <b style="color:#0c6914" class="serif">Nome admin: </b><input class="italic" class="serif" placeholder ="nome admin" type = "text" name="nomeadmin" required> <br>
 
+<b style="color:#0c6914" class="serif">Cognome admin: </b><input class="italic" class="serif" placeholder ="cognome admin" type = "text" name="cognomeadmin" required> <br>
+
 <b style="color:#0c6914" class="serif">Codice admin: </b><input class="italic" class="serif" placeholder ="codice admin" type = "text" name="codadmin" required> <br>
 
 <br>
-<a href="ListaServlet">clicca qui</a>
+<input type="submit" value="Login">
+
+<% if (session.getAttribute("error") != null) {
+				out.println(session.getAttribute("error"));
+			}
+%>
+
 <footer><jsp:include page="/JSP/footer.jsp"/></footer>
 
 
