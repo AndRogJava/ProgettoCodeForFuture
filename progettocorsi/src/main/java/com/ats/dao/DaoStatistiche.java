@@ -52,9 +52,9 @@ public class DaoStatistiche {
 
 	public String corsoPiuFrequentato() throws DaoException {
 		String corso = null;
-		String query="select count(*)  count, dt.nomecorso from CORSI_CORSISTI DATI_CORSI where  cc.codcorso  = dt.codcorso group by  dt.nomecorso, cc.codcorso order by count desc";
+		String query="select count(*)  count, dt.nomecorso from CORSI_CORSISTI  cc, DATI_CORSI dt where  cc.codcorso  = dt.codcorso group by  dt.nomecorso, cc.codcorso order by count asc";
 		conn= ConnectionFactory.getInstance();
-		int count=0;
+		
 
 		try {
 
@@ -62,7 +62,9 @@ public class DaoStatistiche {
 			resultset = prepStatement.executeQuery();
 
 			while(resultset.next()){
-				count = resultset.getInt("count");
+				corso = resultset.getString("nomecorso");
+			
+			
 			}
 
 		} catch (SQLException e) {
@@ -76,9 +78,9 @@ public class DaoStatistiche {
 	}	
 
 
-	public Date dataInizioUltimoCorso() throws DaoException {
-		StatisticheDTO statistiche = new StatisticheDTO ();
-		Date data = Date.valueOf(statistiche.getCorso().getData_iniziocorso()); 
+	public LocalDate dataInizioUltimoCorso() throws DaoException {
+		StatisticheDTO statistiche = new StatisticheDTO (); 
+		LocalDate data = null;
 		String query= "select data_iniziocorso from Dati_CORSI where data_iniziocorso = (select max(data_iniziocorso) from DATI_CORSI )";
 		conn= ConnectionFactory.getInstance();
 		try {
@@ -90,7 +92,7 @@ public class DaoStatistiche {
 			while(resultset.next()){
 				statistiche = new StatisticheDTO ();
 
-				statistiche.getCorso().setData_iniziocorso(resultset.getDate("data_iniziocorso").toLocalDate());
+				 data = resultset.getDate("data_iniziocorso").toLocalDate();
 
 			}
 
@@ -99,7 +101,8 @@ public class DaoStatistiche {
 
 		}
 
-		return data;
+		
+		return data ;
 	}
 
 
