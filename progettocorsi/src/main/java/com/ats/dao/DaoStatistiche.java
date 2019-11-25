@@ -155,6 +155,7 @@ public class DaoStatistiche {
 	}
 
 
+	
 	private int numeroCorsi() throws DaoException {
 
 		String query= "select count(codcorso) numerocorsi from DATI_CORSI";
