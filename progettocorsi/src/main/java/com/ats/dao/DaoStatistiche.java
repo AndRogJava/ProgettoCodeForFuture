@@ -229,6 +229,34 @@ public class DaoStatistiche {
 		}
 		return docente; 
 	}
+	
+	public LinkedList <DatiDocenti> docentiPerNomeCorsi(String nomecorso) throws DaoException{
+		
+		LinkedList <DatiDocenti> listaDocentiPerNomeCorso= new LinkedList <DatiDocenti> ();
+		DatiDocenti docentetmp = new DatiDocenti();
+		try {
+		conn= ConnectionFactory.getInstance();
+		
+		
+		String query= "select* from dati_docenti dd join dati_corsi dc on dd.coddocente = dc.coddocente where dc.nomecorso=?";
+			
+			prepStatement= conn.prepareStatement(query);
+			prepStatement.setString(1, nomecorso);
+			resultset = prepStatement.executeQuery();
+			while(resultset.next()){
+				docentetmp.setCoddocente(resultset.getInt("CODDOCENTE"));
+				docentetmp.setCognomedocente(resultset.getString("COGNOMEDOCENTE"));
+				docentetmp.setNomedocente(resultset.getString("NOMEDOCENTE"));
+				docentetmp.setCvdocente(resultset.getString("CV_DOCENTE"));
+				listaDocentiPerNomeCorso.add(docentetmp);
+			}
+		} catch (SQLException e) {
+			e.getMessage();
+			
+		}
+		
+		return listaDocentiPerNomeCorso;
+	}
  			
 	
 }

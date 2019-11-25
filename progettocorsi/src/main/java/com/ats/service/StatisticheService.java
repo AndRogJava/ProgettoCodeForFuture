@@ -2,6 +2,7 @@ package com.ats.service;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.LinkedList;
 
 import com.ats.dao.DaoCorsista;
 import com.ats.dao.DaoStatistiche;
@@ -52,4 +53,9 @@ public class StatisticheService {
 
 //	VIII. Corsi con posti disponibili
 	//da implementare in DaoDatiCorsiImpl
+	
+// IX. Docenti per nome Corso
+	public LinkedList <DatiDocenti> docentiPerNomeCorsi(String nomecorso) throws DaoException{
+		return daoStat.docentiPerNomeCorsi(nomecorso);
+	}
 }
