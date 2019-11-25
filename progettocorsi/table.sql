@@ -125,3 +125,7 @@ FOR EACH ROW
 BEGIN
   DELETE FROM corsi_corsisti WHERE corsi_corsisti.CODCORSO = :old.CODCORSO;
 END;
+
+create sequence CorsoCorsista_Seq
+start with 8000 increment by 1000
+minvalue 1 nomaxvalue nocycle;

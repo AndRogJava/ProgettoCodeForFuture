@@ -39,10 +39,11 @@ color: black;
 </style>
 
 <body>
+<header><jsp:include page="/JSP/header.jsp"/></header>
 
-<form action="/ListaServlet" method="GET">
+<form action="/StatisticheServlet" method="GET">
 <% 
-out.println(session.getAttribute("lista"));
+out.println(session.getAttribute("listaCorsisti"));
  %>
 
 <table>
@@ -51,21 +52,24 @@ out.println(session.getAttribute("lista"));
 
 <td>Nome</td>
 <td>Cognome</td>  
+<td>Codice</td>
 <td>Precedenti Formativi</td>
-<td>Corso</td>
+
 
 </tr>
 </thead>
 
-<c:forEach items="${lista}" var="items">
+<c:forEach items="${listaCorsisti}" var="items">
 <tr>
 <td><c:out value="${items.nomecorsista}" /></td>
 <td><c:out value="${items.cognomecorsista}" /></td>
+<td id="codice"><c:out value="${current.codcorsista}" />    
 <td><c:out value="${items.precedentiformativi}" /></td>
-<td><c:out value="${items.nomecorso}" /></td>
+
 
 </tr>
      </c:forEach>
      </table>
+     <footer><jsp:include page="/JSP/footer.jsp"/></footer>
 </body>
 </html>

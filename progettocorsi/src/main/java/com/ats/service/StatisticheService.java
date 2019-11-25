@@ -1,5 +1,6 @@
 package com.ats.service;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 import com.ats.dao.DaoCorsista;
@@ -28,7 +29,7 @@ public class StatisticheService {
 	}
 	
 //III.  Data di inizio ultimo corso
-	public LocalDate DataInizioUltimoCorso() throws DaoException {
+	public Date DataInizioUltimoCorso() throws DaoException {
 		return daoStat.dataInizioUltimoCorso();
 		
 	}

@@ -14,26 +14,44 @@
 <body>
 <header><jsp:include page="/JSP/header.jsp"/></header>
 <form action="/ListaServlet" method="GET">
+<style>
+th, td {
+	border: 3px solid #111;
+	padding:8px;
+}
+thead {
+	background-color: #449D48;
+}
 
-<table>
+</style>
+
+<table align = "center">
+
 	<thead>
 		<tr>
 			<b><h2><td>NOME CORSISTA</td></h2></b>
 			<b><h2><td>COGNOME CORSISTA</td></h2></b>	
-			<b><h2><td>CODICE CORSISTA</td></h2></b>
+			
+			
+			
 			</tr>
 	</thead>
 	
 	 <c:forEach items="${lista}" var="current">
 	 
         <tr>
-          <td><a href="ProfiloCorsista.jsp"><c:out value="${current.nomecorsista}" /></a>
+          <td><c:out value="${current.nomecorsista}" /></a>
            <td><c:out value="${current.cognomecorsista}" /> 
-             <td id="codice"><c:out value="${current.codcorsista}" />
+           
+             
        
- </tr>		
+ </tr>	
+ 	
  </c:forEach>
-  </table>              
+ <a href="InserisciCorsista.jsp"> </a>
+<!-- <input type="button" name="bottone" value="Statistiche" /></a>     -->  
+  </table> 
+         
 <footer><jsp:include page="/JSP/footer.jsp"/></footer>	
 </body>
 </form>
