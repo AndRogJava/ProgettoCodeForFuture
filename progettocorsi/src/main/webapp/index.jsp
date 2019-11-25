@@ -9,7 +9,7 @@
 </head>
 <body class="img">
 
-<header><jsp:include page="/JSP/header.jsp"/></header>
+<header><jsp:include page="header.jsp"/></header>
 <h1 style="color:#0c6914" class="serif"> Benevenuto Admin!</h1>
 <h2 style="color:#0c6914" class="serif"> Per accedere alla tua pagina di gestione dei corsi effettua il login</h2>
 
@@ -26,7 +26,7 @@
 			}
 %>
 
-<footer><jsp:include page="/JSP/footer.jsp"/></footer>
+<footer><jsp:include page="footer.jsp"/></footer>
 
 
 </form>
