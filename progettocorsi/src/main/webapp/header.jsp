@@ -21,13 +21,17 @@
                        
   <% Integer codadmin =(Integer)session.getAttribute("codadmin");
 	        if (nome!=null && codadmin!=0){%>
-	        <li class="serif" style="float:right"><a class="active" href="logout.jsp">Logout</a></li>
+	        <li class="serif" style="float:right"><a class="active" href="logout.jsp">Logout</a>
+	        <%session.invalidate();%></li>
 	        <li class="serif"><a href="statistiche.jsp">Statistiche</a></li>
+	        
 	     <% } %>
 
 
   
 </ul>
+
+
 </body>
 </html>
 

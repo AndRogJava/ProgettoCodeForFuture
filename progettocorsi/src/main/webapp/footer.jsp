@@ -12,7 +12,7 @@
 
 
 <ul>
-	<li><a id="footer" class="serif" style="color:#515151"> Developed by: JavaCodeForFuture2019© <br><br>
+	<li><a id="footer" class="serif"> Developed by: JavaCodeForFuture2019© <br><br>
 Selene Allevi |
 Liliana Ceragioli |
 Daniela Damiano |
