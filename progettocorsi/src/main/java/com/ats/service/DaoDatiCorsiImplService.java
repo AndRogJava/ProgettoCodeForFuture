@@ -29,5 +29,9 @@ public class DaoDatiCorsiImplService {
 	public DatiCorsi getCorsobyCodCorso (int codcorso) throws  DaoException{
 		return daoDCI.getCorsobyCodCorso(codcorso);
 	}
+	
+	public LinkedList<DatiCorsi> listaCorsibyData() throws  DaoException, SQLException{
+		return daoDCI.listaCorsibyData();
+	}
 
 }
