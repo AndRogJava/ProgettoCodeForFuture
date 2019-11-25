@@ -27,7 +27,7 @@
 %>
 
 <footer><jsp:include page="/JSP/footer.jsp"/></footer>
-<!-- ciao -->
+
 
 </form>
 </body>
