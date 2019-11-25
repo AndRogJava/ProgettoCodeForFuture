@@ -9,7 +9,8 @@ import com.ats.dao.DaoCorsista;
 import com.ats.dao.DaoDatiAmministratoriImpl;
 import com.ats.dao.DaoDatiCorsiImpl;
 import com.ats.dao.DaoDocente;
-
+import com.ats.dao.DaoStatistiche;
+import com.ats.dto.StatisticheDTO;
 import com.ats.exception.DaoException;
 import com.ats.model.DatiAmministratori;
 import com.ats.model.DatiCorsi;
@@ -21,16 +22,13 @@ public class daoTest {
 
 	public static void main(String[] args) throws DaoException {
 
+	//TEST CORSISTI
+			DatiCorsisti c2 = new DatiCorsisti();
 		
-		DatiCorsisti c2 = new DatiCorsisti();
-		
-		c2.setNomecorsista("Anna");
-		c2.setCognomecorsista("Anni");
-		c2.setCodcorsista(7);
-		c2.setPrecedentiformativi("Matematica");
-		
-		
-		
+			c2.setNomecorsista("Anna");
+			c2.setCognomecorsista("Anni");
+			c2.setCodcorsista(7);
+			c2.setPrecedentiformativi("Matematica");
 		
 			DaoCorsista dc = new DaoCorsista();
 			//System.out.println(dc.selectAll());
@@ -39,7 +37,8 @@ public class daoTest {
 			//dc.updateCorsista(c2);
 			//dc.deleteCorsista(7);
 		
-	
+			
+	//TEST AMMINISTRATORI
 			DatiAmministratori da = new DatiAmministratori();
 			da.setCodadmin(124);
 			da.setNomeadmin("Marcello");
@@ -53,7 +52,7 @@ public class daoTest {
 			//System.out.println(dda.getAmministratorebyUsername(11));
 	
 			
-			
+	//TEST DOCENTI
 			DatiDocenti d1 = new DatiDocenti();
 			
 			d1.setNomedocente("Marco");
@@ -68,29 +67,23 @@ public class daoTest {
 			//dd.deleteDocente(111);
 			//System.out.println(dd.getDocenteById(100));
 			
-			
+	//TEST CORSI
 			DatiCorsi datc = new DatiCorsi ();
 			datc.setCodcorso(33);
 			datc.setCoddocente(87);
 			datc.setAulacorso("4774747");
 			datc.setCommenticorso("jgf");
 			datc.setCostocorso(70);
-			
 			LocalDate data=LocalDate.of(2013, 01, 01);
 			datc.setData_iniziocorso(data);
-			
 			LocalDate data1=LocalDate.of(2014, 01, 01);
 			datc.setData_finecorso(data1);
-			
 			datc.setNomecorso("giava");
 			
 			
 			
 			DaoDatiCorsiImpl ddci = new DaoDatiCorsiImpl();
-			ddci.addCorso(datc); //da verificare dopo SERVLET
-			
-			
-			
+			//ddci.addCorso(datc); //da verificare dopo SERVLET
 			
 //			try {
 //				System.out.println(ddci.getallCorsi());
@@ -106,7 +99,7 @@ public class daoTest {
 //				e.printStackTrace();
 //			}
 			
-			ddci.updateCorso(datc); //da verificare dopo SERVLET
+			//ddci.updateCorso(datc); //da verificare dopo SERVLET
 //			
 //			try {
 //				System.out.println(ddci.getCorsobyCodCorso(223));
@@ -114,8 +107,21 @@ public class daoTest {
 //				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			}
-//			
+
 			
+			
+	//TEST STATISTICHE
+			
+			StatisticheDTO sdto = new StatisticheDTO();
+			sdto.setCorsisti(c2);
+			sdto.setCorso(datc);
+			sdto.setDocenti(d1);
+			
+			DaoStatistiche ds = new DaoStatistiche();
+			//System.out.println(ds.corsistiTotali());
+			//System.out.println(ds.durataMediaCorsi());
+			//System.out.println(ds.numeroCommenti());
+			System.out.println(ds.docentePiuCorsi());
 	}
 	
 }

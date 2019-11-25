@@ -96,7 +96,7 @@ public class DaoStatistiche {
 	public DatiDocenti docentePiuCorsi() throws DaoException{
 		DatiDocenti docente = new DatiDocenti();
 		
-		String query="select count(*) as corsi, d.nomedocente from DATI_DOCENTI as d, DATI_CORSI as dc"
+		String query="select count(*)  corsi, d.nomedocente from DATI_DOCENTI  d, DATI_CORSI  dc"
 				+ " where  d.coddocente  = dc.coddocente group by d.nomedocente order by corsi desc";
 		conn= ConnectionFactory.getInstance();
 		int corsi=0;
