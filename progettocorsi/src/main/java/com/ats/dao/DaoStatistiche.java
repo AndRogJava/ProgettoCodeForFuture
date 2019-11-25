@@ -1,6 +1,7 @@
 package com.ats.dao;
 import com.ats.dto.*;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,7 +25,7 @@ public class DaoStatistiche {
 	}
 	
 	StatisticheDTO statistiche = new StatisticheDTO ();
-	
+//	I.    Numero corsisti totali.		
 	public int corsistiTotali() throws DaoException{
 
 			String query="select count(codcorsista) as count from DATI_CORSISTI ";
@@ -46,18 +47,17 @@ public class DaoStatistiche {
 			}
 			return count;
 		}
-	
+//	II.   Nome del corso più frequentato
 	public String corsoPiuFrequentato() {
 		String corso = null;
 		return corso;
 	}
-	
-	public LocalDate dataInizioUltimoCorso() {
-		LocalDate d = null ;
+//	III.  Data di inizio ultimo corso	
+	public Date dataInizioUltimoCorso() {
+		Date d = null ;
 		return d;
 	}
-	
-	
+
 //	IV.   Durata media dei corsi ( in giorni lavorativi )	
 	public double durataMediaCorsi() {
 		double durata = 0;
