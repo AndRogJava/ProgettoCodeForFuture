@@ -61,25 +61,61 @@ public class DaoStatistiche {
 //	IV.   Durata media dei corsi ( in giorni lavorativi )	
 	public double durataMediaCorsi() {
 		double durata = 0;
+		
+		
+
 		return durata;
 	}
+	
+
 //	V.    Numero di commenti presenti
-	public int numeroCommenti() {
+	public int numeroCommenti() throws DaoException{
 		int commenti = 0;
+		
+		String query="select count(commenticorso) as commenti from DATI_CORSI ";
+		conn= ConnectionFactory.getInstance();
+		
+		try {
+			
+			prepStatement= conn.prepareStatement(query);
+			resultset = prepStatement.executeQuery();
+		
+			while(resultset.next()){
+				commenti = resultset.getInt("commenti");
+			}
+			
+		} catch (SQLException e) {
+			throw new DaoException(e.getMessage());
+			
+		}
 		return commenti;
 		
 	}
-//	VI.   Elenco corsisti
-	//da utilizzare quello già implementato in DaoDatiCorsisti
-		
+	
 //	VII.  Docente che può tenere più tipologie di corso
-	public DatiDocenti docentePiuCorsi() {
+	public DatiDocenti docentePiuCorsi() throws DaoException{
 		DatiDocenti docente = new DatiDocenti();
+		
+		String query="select count(*) as corsi, d.nomedocente from DATI_DOCENTI as d, DATI_CORSI as dc"
+				+ " where  d.coddocente  = dc.coddocente group by d.nomedocente order by corsi desc";
+		conn= ConnectionFactory.getInstance();
+		int corsi=0;
+		
+		try {
+			
+			prepStatement= conn.prepareStatement(query);
+			resultset = prepStatement.executeQuery();
+		
+			while(resultset.next()){
+				corsi = resultset.getInt("corsi");
+			}
+			
+		} catch (SQLException e) {
+			throw new DaoException(e.getMessage());
+			
+		}
 		return docente;
 	}
 			
-//	VIII. Corsi con posti disponibili
-	//da implementare in DaoDatiCorsiImpl
-
 	
 }
