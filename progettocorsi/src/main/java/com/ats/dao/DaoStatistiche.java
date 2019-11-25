@@ -112,7 +112,7 @@ public class DaoStatistiche {
 		double media = 0;
 
 		try {
-
+ 
 
 			prepStatement= conn.prepareStatement(query);
 
