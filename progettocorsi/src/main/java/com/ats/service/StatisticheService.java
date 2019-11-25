@@ -29,7 +29,7 @@ public class StatisticheService {
 	}
 	
 //III.  Data di inizio ultimo corso
-	public Date DataInizioUltimoCorso() throws DaoException {
+	public LocalDate DataInizioUltimoCorso() throws DaoException {
 		return daoStat.dataInizioUltimoCorso();
 		
 	}

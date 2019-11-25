@@ -16,6 +16,7 @@ import org.apache.catalina.filters.CsrfPreventionFilter;
 
 import com.ats.exception.DaoException;
 import com.ats.model.DatiCorsisti;
+import com.ats.model.DatiDocenti;
 import com.ats.service.CorsistaService;
 import com.ats.service.StatisticheService;
 
@@ -75,23 +76,48 @@ public class StatisticheServlet extends HttpServlet {
 		rd.forward(request, response);	
 		
 //		III.  Data di inizio ultimo corso
-		Date d = null;
+		LocalDate data = null;
 		try {
-			d = stSe.DataInizioUltimoCorso();
+			data = stSe.DataInizioUltimoCorso();
 		} catch (DaoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		LocalDate data = d.toLocalDate();
-		
+				
 		session.setAttribute("data", data);
 		System.out.println("data" + data);
 		rd=request.getRequestDispatcher("statistiche.jsp");
 		rd.forward(request, response);	
 				
 //		IV.   Durata media dei corsi ( in giorni lavorativi )
-				
-//		V.    Numero di commenti presenti
+		
+		double media = 0;
+		
+		try {
+			media = stSe.DurataMediaCorsi();
+		} catch (DaoException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		session.setAttribute("media", media);
+		System.out.println("media" + media);
+		rd=request.getRequestDispatcher("statistiche.jsp");
+		rd.forward(request, response);
+		
+//		V.    Numero di commenti presenti	
+		int commentiTot = 0;
+		try {
+			commentiTot = stSe.NumeroCommenti() ;
+		} catch (DaoException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		session.setAttribute("commentiTot", commentiTot);
+		System.out.println("commentiTot" + commentiTot);
+		rd= request.getRequestDispatcher("statistiche.jsp");
+		rd.forward(request, response);
 				
 //		VI.   Elenco corsisti
 	
@@ -123,21 +149,29 @@ public class StatisticheServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		 
-	}
-				
+			
 //		VII.  Docente che può tenere più tipologie di corso
-				
+		DatiDocenti docente = new DatiDocenti();
+		try {
+			docente = stSe.DocentePiuCorsi();
+		} catch (DaoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		session.setAttribute("docente", docente);
+		System.out.println("docente" + docente);
+		rd=request.getRequestDispatcher("statistiche.jsp");
+		rd.forward(request, response);
+	
+			
 //		VIII. Corsi con posti disponibili
 		
 		
+	}	
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Al punto VI. cliccando sul nome del corsista si deve 
-		//aprire la pagina contenente il riepilogo con le informazioni 
-		//dei corsi da lui frequentati.
-		
- 
+		 
 		doGet(request, response);
 	}
 

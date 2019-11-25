@@ -1,43 +1,18 @@
 @charset "ISO-8859-1";
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #6b6b6b;
-}
 
-li {
-  float: left;
+.img{
+	background-image: url("../images/libri.jpg");
+	background-blend-mode: lighten;
+	background-repeat: no-repeat;
+	background-position: right;	
 }
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #111;
-}
-
-.active {
-  background-color: #4CAF50;
-}
-
-.serif {
-  font-family: "Georgia", serif;
-}
-@charset "ISO-8859-1";
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #515151;
+  background-color: #575757;
 }
 
 li {
@@ -68,14 +43,15 @@ li a:hover:not(.active) {
   font-style: italic;
 }
 
-
 #footer {
    position: fixed;
    left: 0;
    bottom: 0;
    width: 100%;
-   height: 240px;
-   background-color: #111;
-   color: white;
+   height: 90px;
+   background-color: #575757;
+   color: black;
    text-align: center;
+   padding: 15px; 
+
 }
