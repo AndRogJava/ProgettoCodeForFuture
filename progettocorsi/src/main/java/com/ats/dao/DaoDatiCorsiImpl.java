@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLData;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.LinkedList;
 
@@ -134,6 +136,7 @@ public class DaoDatiCorsiImpl implements IDaoDatiCorsi {
 					}
 		
 			return listaCorsi;
+			
 		}catch (SQLException sql) {
 			// TODO: handle exception
 			throw new DaoException(sql.getMessage());
@@ -172,6 +175,52 @@ public class DaoDatiCorsiImpl implements IDaoDatiCorsi {
 			throw new DaoException(sql.getMessage());
 		}
 		
+
+		
+	}
+	public LinkedList<DatiCorsi> listaCorsibyData () throws DaoException, SQLException{
+		 DatiCorsi corso = null;
+		 LocalDate date = LocalDate.now ();
+		
+		 try {
+	
+
+		String query="select * from DATI_CORSI";
+		System.out.println(query);
+		LinkedList <DatiCorsi> listaCorsi = new LinkedList<DatiCorsi>();
+		conn=ConnectionFactory.getInstance();
+		prepStatement=conn.prepareStatement(query);
+		Date date1 = Date.valueOf(date);
+		
+	    resultset=prepStatement.executeQuery();
+	    
+	    while(resultset.next()){
+
+		  corso =new DatiCorsi ();
+		 LocalDate datainiziocorso= resultset.getDate("data_iniziocorso").toLocalDate();
+		 
+
+		 if (datainiziocorso.isAfter(date1.toLocalDate())) {
+			
+			corso.setCodcorso(resultset.getInt("codcorso"));
+			corso.setCoddocente(resultset.getInt("coddocente"));
+			corso.setAulacorso(resultset.getNString("aulacorso"));
+			corso.setCommenticorso(resultset.getNString("commenticorso"));
+			corso.setCostocorso(resultset.getInt("costocorso"));
+			corso.setNomecorso(resultset.getNString("nomecorso"));
+			
+			corso.setData_iniziocorso(resultset.getDate("data_iniziocorso").toLocalDate());
+			corso.setData_finecorso(resultset.getDate("data_finecorso").toLocalDate());
+			
+			listaCorsi.add(corso);
+				}
+	System.out.println(listaCorsi);
+		
+	}
+		return listaCorsi;
+		    }
+			catch (SQLException sql)  {
+				throw new DaoException(sql.getMessage());
+			}
 	}
 }
-
