@@ -61,7 +61,7 @@ System.out.print(session.getAttribute("listaCorsi"));
         </tr>
       </c:forEach>
 
-
+ 
 </table>
 
 <footer><jsp:include page="footer.jsp"/></footer>
