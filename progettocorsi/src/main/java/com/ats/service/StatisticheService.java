@@ -47,7 +47,7 @@ public class StatisticheService {
 	//da utilizzare quello già implementato in DaoDatiCorsisti
 		
 //	VII.  Docente che può tenere più tipologie di corso
-	public DatiDocenti DocentePiuCorsi() throws DaoException {
+	public LinkedList<DatiDocenti> DocentePiuCorsi() throws DaoException {
 		return daoStat.docentePiuCorsi();
 	}
 
