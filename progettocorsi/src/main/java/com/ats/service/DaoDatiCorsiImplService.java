@@ -33,5 +33,9 @@ public class DaoDatiCorsiImplService {
 	public LinkedList<DatiCorsi> listaCorsibyData() throws  DaoException, SQLException{
 		return daoDCI.listaCorsibyData();
 	}
+	
+	public LinkedList <DatiCorsi> getCorsobyNomeCorso (String nomecorso) throws  DaoException{
+		return daoDCI.getCorsobyNomeCorso(nomecorso);
+	}
 
 }

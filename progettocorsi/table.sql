@@ -129,3 +129,10 @@ END;
 create sequence CorsoCorsista_Seq
 start with 8000 increment by 1000
 minvalue 1 nomaxvalue nocycle;
+
+
+create sequence DATI_CORSISTI_codcorsista_Seq
+start with 8 increment by 1
+minvalue 1 nomaxvalue nocycle;
+
+commit;
