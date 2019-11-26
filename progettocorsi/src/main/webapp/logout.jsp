@@ -18,13 +18,9 @@
 		<br>
 </div>
 
-<%
-		session.invalidate();
-
-	%>
+<%	session.invalidate();	%>
 	
 </body>
-
 
 <footer><jsp:include page="footer.jsp"/></footer>
 
