@@ -284,7 +284,7 @@ public class DaoStatistiche {
 		Integer partecipanti = 0;
 		String nomecorso = null;
 		final  int NUMERO_PARTECIPANTI= 12;
-//		LinkedList<String> listaCorsi = new LinkedList <String> ();
+//	//	LinkedList<String> listaCorsi = new LinkedList <String> ();
 		try {
 			
 		prepStatement= conn.prepareStatement(query);
