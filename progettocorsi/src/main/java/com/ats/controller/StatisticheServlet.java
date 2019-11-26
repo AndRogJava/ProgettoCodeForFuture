@@ -166,7 +166,7 @@ public class StatisticheServlet extends HttpServlet {
 			
 //		VIII. Corsi con posti disponibili
 		
-		// prova pro va  
+		// prova pro va     
 	}	
 
 
