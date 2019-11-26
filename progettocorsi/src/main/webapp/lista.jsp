@@ -32,16 +32,13 @@ thead {
 		<tr>
 			<b><h2><td>NOME CORSISTA</td></h2></b>
 			<b><h2><td>COGNOME CORSISTA</td></h2></b>	
-			
-			
-			
-			</tr>
+		</tr>
 	</thead>	
 	
-	 <c:forEach items="${lista}" var="current">
+	 <c:forEach items="${listaTutti}" var="current">
 	 
         <tr>
-          <td><c:out value="${current.nomecorsista}" /></a>
+          <td><c:out value="${current.nomecorsista}" />
            <td><c:out value="${current.cognomecorsista}" /> 
                 
        

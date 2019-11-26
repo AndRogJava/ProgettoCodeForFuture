@@ -4,10 +4,7 @@
     
     <%@ page import="java.time.LocalDate"%>
     <%@ page import = "java.util.LinkedList" %>
-    <%@ page import = "java.lang.*" %>
- 
-    
-     
+
      <%@ page import="com.ats.dao.DaoStatistiche"%>
       <%@ page import="com.ats.controller.StatisticheServlet"%>
     
@@ -35,32 +32,32 @@
   
   <tr>
     <td>Numero corsisti totali: </td>
-    <% Integer.parseInt(session.getAttribute("corsistiTot").toString()); %> 
-    <td>  <% out.println("corsistiTot"); %>  </td>
+
+    <td>  <% out.println(session.getAttribute("corsistiTot")); %>  </td>
     
   </tr>
   
   <tr>
     <td>Corso più frequentato: </td>
-     <%session.getAttribute("corsoPiuFreq").toString();%>
-    <td><% out.println("corsoPiuFreq"); %>  </td>
+     
+    <td><% out.println(session.getAttribute("corsoPiuFreq")); %>  </td>
   </tr>
   
   <tr>
     <td>Data di inizio dell'ultimo corso: </td>
-    <% LocalDate data = (LocalDate)session.getAttribute("dataInizio"); %>
+    <% session.getAttribute("dataInizio"); %>
     <td> <% out.println("dataInizio"); %>  </td>
   </tr>
   
   <tr>
     <td> Durata media dei corsi ( in giorni lavorativi ) </td>
-    <% Double media = (Double)session.getAttribute("media"); %>
+    <% session.getAttribute("media"); %>
     <td> <% out.println("media"); %></td>
   </tr>
   
   <tr>
     <td>Numero di commenti presenti: </td>
-    <% Integer.parseInt(session.getAttribute("commentiTot").toString()); %>
+    <% session.getAttribute("commentiTot"); %>
     <td><% out.println("commentiTot"); %></td>
   </tr>
  
@@ -80,20 +77,7 @@
 			<td>Codice</td>
 		</tr>
 	</thead>
-	
-	<%  session.getAttribute("listaCorsisti"); %>
-    
-    <c:forEach items="${listaCorsisti}" var="current"> 
-     	<c:url value = "ProfiloCorsista.jsp" var = "myURL">
-  			 <c:param name = "codcorsista" value = "${current.codcorsista}"/>
-   		</c:url>
 
-       <tr>
-          <td> <c:import url = "${myURL}"/> <c:out value="${current.nomecorsista}" /> 
-          <td><c:out value="${current.cognomecorsista}" /> 
-          <td id=codcorsista><c:out value="${current.codcorsista}" />         
-       </tr>
-      </c:forEach>
 
 </table>
 

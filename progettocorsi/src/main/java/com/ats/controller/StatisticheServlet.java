@@ -60,8 +60,9 @@ public class StatisticheServlet extends HttpServlet {
 		int corsisti = 0;
 		try {
 			corsisti = stSe.CorsistiTotali();
-			System.out.println(stSe.CorsistiTotali());
 			System.out.println(corsisti);
+			System.out.println(stSe.CorsistiTotali());
+			
 		} catch (DaoException e) {
 			e.printStackTrace();
 		}
@@ -155,6 +156,7 @@ public class StatisticheServlet extends HttpServlet {
 		LinkedList<DatiDocenti> ListadocentiPiuCorsi = new LinkedList<DatiDocenti>();
 		try {
 			ListadocentiPiuCorsi = stSe.DocentePiuCorsi();
+			System.out.println(ListadocentiPiuCorsi);
 		} catch (DaoException e) {
 			e.printStackTrace();
 		}

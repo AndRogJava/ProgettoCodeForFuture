@@ -54,8 +54,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 			e.printStackTrace();
 		}
 		System.out.println(listaTutti);
-		session.setAttribute("lista", listaTutti);
-		System.out.println("stampalista" + listaTutti);
+		session.setAttribute("listaTutti", listaTutti);
+		System.out.println("listaTutti" + listaTutti);
 		 
 		rd=request.getRequestDispatcher("lista.jsp");
 		rd.forward(request, response);
