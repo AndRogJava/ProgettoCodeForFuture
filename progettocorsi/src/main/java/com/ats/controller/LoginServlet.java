@@ -44,6 +44,7 @@ public class LoginServlet extends HttpServlet {
 		DatiAmministratori amministratore = new DatiAmministratori();
 		String nomeIns = request.getParameter("nomeadmin");
 		int codice = Integer.parseInt(request.getParameter("codadmin"));
+//		String listaServ = request.getParameter("ListaServlet");
 	
 		
 		try {
@@ -52,11 +53,11 @@ public class LoginServlet extends HttpServlet {
 			if (amministratore!=null  && amministratore.getCodadmin()==codice && amministratore.getNomeadmin().equalsIgnoreCase(nomeIns)) {
 				session.setAttribute("nomeadmin", nomeIns);		
 				session.setAttribute("codadmin", codice);
-				rd = request.getRequestDispatcher("lista.jsp");
-				rd = request.getRequestDispatcher("/ListaServlet");
+				rd = request.getRequestDispatcher("lista.jsp");	
+				rd = request.getRequestDispatcher("ListaServlet");
 //				RequestDispatcher forward = request.getServletContext().getRequestDispatcher("/ListaServlet");
-//				rd.forward("ListaServlet", response);
-				//response.sendRedirect("http://localhost:8082/progettocorsi/ListaServlet");
+//				rd.forward(request, "ListaServlet");
+//				response.sendRedirect("http://localhost:8082/progettocorsi/ListaServlet");
 				rd.forward(request,response);
 
 
