@@ -11,7 +11,7 @@
 
 
 <header><jsp:include page="header.jsp" /></header>
-	<div>
+	<div class="box">
 	    
 		<h1><font color="#0c6914">Hai eseguito con successo il logout</font></h1>
 		<a href="index.jsp">Torna alla Home Page</a>
