@@ -2,10 +2,8 @@
 
 .img{
 	background-image: url("../images/libri.jpg");
-	background-blend-mode: lighten;
-	background-repeat: no-repeat;
-	background-position: relative;	
-	background-size: cover; 
+	background-repeat:no-repeat;
+	background-position: right;
 }
 
 ul {

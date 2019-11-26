@@ -11,8 +11,6 @@
 
 <ul>
 
-  <li><a class="serif" href="lista.jsp">Corsi Attivi</a></li>
-
   <% String nome =(String)session.getAttribute("nomeadmin");
 	        if (nome!=null) { %>
 	        <li class="serif" style="float:right"><a class="active"><%=nome%></a></li>   
@@ -26,8 +24,6 @@
 	        <li class="serif"><a href="statistiche.jsp">Statistiche</a></li>
 	        
 	     <% } %>
-
-
   
 </ul>
 
