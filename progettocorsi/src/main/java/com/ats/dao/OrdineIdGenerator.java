@@ -19,7 +19,7 @@ public class OrdineIdGenerator implements IdGeneratorInterface{
 
 	private Connection getConnection() throws DaoException {
 		Connection con;
-		con = ((OrdineIdGenerator) ConnectionFactory.getInstance()).getConnection();
+		con = ConnectionFactory.getInstance();
 		return con;
 	}
 	
@@ -29,7 +29,7 @@ public class OrdineIdGenerator implements IdGeneratorInterface{
 		try{
 			conn =  getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery("select table_codcorsista_Seq.nextVal from dual");
+			rs = stmt.executeQuery("select DATI_CORSISTI_codcorsista_Seq.nextVal from dual");
 			rs.next();
 			id = rs.getInt(1);
 		 
