@@ -38,10 +38,10 @@ color: black;
 }
 </style>
 
-<body>
+<body class="img">>
 <header><jsp:include page="header.jsp"/></header>
 
-<form action="/StatisticheServlet" method="GET">
+<form action="StatisticheServlet" method="GET">
 <% 
 out.println(session.getAttribute("listaCorsisti"));
  %>
@@ -65,7 +65,6 @@ out.println(session.getAttribute("listaCorsisti"));
 <td><c:out value="${items.cognomecorsista}" /></td>
 <td id="codice"><c:out value="${current.codcorsista}" />    
 <td><c:out value="${items.precedentiformativi}" /></td>
-
 
 </tr>
      </c:forEach>

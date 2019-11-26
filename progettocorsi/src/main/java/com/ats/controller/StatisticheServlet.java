@@ -151,7 +151,7 @@ public class StatisticheServlet extends HttpServlet {
 		 
 			
 //		VII.  Docente che può tenere più tipologie di corso
-		DatiDocenti docente = new DatiDocenti();
+		LinkedList<DatiDocenti> docente = new LinkedList <DatiDocenti>();
 		try {
 			docente = stSe.DocentePiuCorsi();
 		} catch (DaoException e) {
@@ -166,7 +166,7 @@ public class StatisticheServlet extends HttpServlet {
 			
 //		VIII. Corsi con posti disponibili
 		
-		
+		// prova pro va     
 	}	
 
 
