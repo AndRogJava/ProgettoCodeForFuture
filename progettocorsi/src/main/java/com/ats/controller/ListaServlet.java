@@ -18,45 +18,41 @@ import com.ats.service.CorsistaService;
 
 @WebServlet("/ListaServlet")
 public class ListaServlet extends HttpServlet {
-private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 
 
-public ListaServlet() {
-super();
+	public ListaServlet() {
+		super();
 
-}
-
-
-protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
-// String nomeIns=request.getParameter("Nomeadmin");
-// int codIns=request.getParameter("Codadmin");
-RequestDispatcher rd;
-try {
-System.out.println("sono nella Servlet");
-HttpSession session = request.getSession();
+	}
 
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
+		HttpSession session = request.getSession();
+		RequestDispatcher rd;
+		
+		LinkedList<DatiCorsisti> listaTutti = new LinkedList<DatiCorsisti>();
 
-LinkedList<DatiCorsisti> listaTutti = new LinkedList<DatiCorsisti>();
+		try {
 
-CorsistaService cs = new CorsistaService();
-listaTutti = cs.selectAll();
-System.out.println(listaTutti);
-session.setAttribute("lista", listaTutti);
-System.out.println("stampalista" + listaTutti);
+			CorsistaService cs = new CorsistaService();
+			listaTutti = cs.selectAll();
+			
 
-} catch (DaoException e) {
-e.printStackTrace();
-}
-rd=request.getRequestDispatcher("JSP/lista.jsp");
-rd.forward(request, response);
+		} catch (DaoException e) {
+			e.printStackTrace();
+		}
+		System.out.println(listaTutti);
+		session.setAttribute("lista", listaTutti);
+		System.out.println("stampalista" + listaTutti);
+		
+		rd=request.getRequestDispatcher("lista.jsp");
+		rd.forward(request, response);
 
-}
+	}
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	doGet(request, response);
-}
+	}
 }

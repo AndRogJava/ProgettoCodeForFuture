@@ -41,7 +41,7 @@ color: black;
 <body>
 <header><jsp:include page="header.jsp"/></header>
 
-<form action="/StatisticheServlet" method="GET">
+<form action="StatisticheServlet" method="GET">
 <% 
 out.println(session.getAttribute("listaCorsisti"));
  %>

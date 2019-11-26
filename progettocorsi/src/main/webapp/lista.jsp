@@ -13,7 +13,7 @@
 </head>
 <body>
 <header><jsp:include page="header.jsp"/></header>
-<form action="/ListaServlet" method="GET">
+<form action="ListaServlet" method="GET">
 <style>
 th, td {
 	border: 3px solid #111;
@@ -48,10 +48,10 @@ thead {
  </tr>	
  	
  </c:forEach>
- <a href="InserisciCorsista.jsp"> </a>
-<!-- <input type="button" name="bottone" value="Statistiche" /></a>     -->  
+
+
   </table> 
-         
+<a href="InserisciCorsista.jsp"> </a>    
 <footer><jsp:include page="footer.jsp"/></footer>	
 </body>
 </form>
