@@ -38,7 +38,7 @@ color: black;
 }
 </style>
 
-<body>
+<body class="img">>
 <header><jsp:include page="header.jsp"/></header>
 
 <form action="StatisticheServlet" method="GET">

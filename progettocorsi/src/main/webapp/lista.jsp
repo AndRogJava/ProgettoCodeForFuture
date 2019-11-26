@@ -11,7 +11,8 @@
 <meta charset="ISO-8859-1">
 <title>lista</title>
 </head>
-<body>
+<body class="img">
+
 <header><jsp:include page="header.jsp"/></header>
 <form action="ListaServlet" method="GET">
 <style>
@@ -35,7 +36,7 @@ thead {
 			
 			
 			</tr>
-	</thead>
+	</thead>	
 	
 	 <c:forEach items="${lista}" var="current">
 	 
@@ -48,10 +49,10 @@ thead {
  </tr>	
  	
  </c:forEach>
+<a href="InserisciCorsista.jsp"> </a>
 
+ </table> 
 
-  </table> 
-<a href="InserisciCorsista.jsp"> </a>    
 <footer><jsp:include page="footer.jsp"/></footer>	
 </body>
 </form>
