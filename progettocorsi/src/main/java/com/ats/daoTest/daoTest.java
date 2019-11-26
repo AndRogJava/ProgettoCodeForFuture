@@ -108,12 +108,12 @@ public class daoTest {
 //				e.printStackTrace();
 //			}
 
-			try {
-				ddci.listaCorsibyData();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			try {
+//				ddci.listaCorsibyData();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 			
 	//TEST STATISTICHE
 			
