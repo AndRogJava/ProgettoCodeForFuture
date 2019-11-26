@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-
 <title>Footer</title>
 <link href="CSS/style.css" rel="stylesheet" type="text/css">
 </head>
@@ -25,13 +24,11 @@ Elena Greco |
 Rossella Di Palma |
 Saveria Paese |
 Alice Urban |
-Mariangela Giovanzanti|
-Gabriella Grandine
-
-	</a></li>
+Mariangela Giovanzanti |
+Gabriella Grandine |
+	</a>
+	</li>
 </ul>
-
-
 
 
 </body>
