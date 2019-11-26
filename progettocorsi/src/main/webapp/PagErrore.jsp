@@ -9,14 +9,19 @@
 </head>
 <body class="img">
 
-<h3 style="color:#0c6914" class="serif">Sorry an exception occured!</h3>  
-<a href="index.jsp">Torna alla Home Page</a>
+<div class="box">
+<h3 style="color:#0c6914" class="serif">La pagina non è al momento disponibile</h3>  
 
+<h2 style="color:#0c6914" class="serif">:(</h2>
+<a href="index.jsp">Torna alla Home Page</a>
+<br>
+<br>
 <%String stampa= (String)session.getAttribute("erroreDao");
 if (stampa!=null){
 response.getWriter().append(stampa);}
 %>
 
+</div>
 <footer><jsp:include page="footer.jsp"/><br></footer>
 
  
