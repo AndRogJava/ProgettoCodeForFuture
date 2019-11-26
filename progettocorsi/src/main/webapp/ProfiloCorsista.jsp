@@ -66,7 +66,6 @@ out.println(session.getAttribute("listaCorsisti"));
 <td id="codice"><c:out value="${current.codcorsista}" />    
 <td><c:out value="${items.precedentiformativi}" /></td>
 
-
 </tr>
      </c:forEach>
      </table>

@@ -43,8 +43,7 @@ thead {
         <tr>
           <td><c:out value="${current.nomecorsista}" /></a>
            <td><c:out value="${current.cognomecorsista}" /> 
-           
-             
+                
        
  </tr>	
  	
