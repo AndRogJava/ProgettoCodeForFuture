@@ -6,7 +6,8 @@
 <meta charset="ISO-8859-1">
 <title>Logout</title>
 </head>
-<body>
+
+<body class="img">
 
 
 <header><jsp:include page="header.jsp" /></header>
