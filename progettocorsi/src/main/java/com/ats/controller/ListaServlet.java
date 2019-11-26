@@ -30,7 +30,7 @@ import com.ats.service.CorsistaService;
 
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
 		// String nomeIns=request.getParameter("Nomeadmin");
-		// int codIns=request.getParameter("Codadmin");
+		// int codIns=request.getParameter("Codadmin"); ------
 		System.out.println("sono nella Servlet");
 		
 		HttpSession session = request.getSession();
