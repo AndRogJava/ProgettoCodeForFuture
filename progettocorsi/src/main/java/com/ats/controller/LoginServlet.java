@@ -70,13 +70,13 @@ public class LoginServlet extends HttpServlet {
 			}
 
 
-		} catch (DaoException e) {
-//			sql.printStackTrace(); gestione eccezioni per quando avremo la jsp dell'errore
-//			sql.getMessage();
-//			rd = request.getRequestDispatcher("Error.jsp");
-//			session.setAttribute("Errore","Siamo spiacenti, si è verificato un errore durante il login.");
-//			richiesta.forward(request, response);
-			e.printStackTrace();
+		} catch (DaoException sql) {
+			sql.printStackTrace(); 
+			sql.getMessage();
+			rd = request.getRequestDispatcher("PagErrore.jsp");
+			session.setAttribute("Errore","Siamo spiacenti, si è verificato un errore durante il login.");
+			rd.forward(request, response);
+			sql.printStackTrace();
 		}
 
 		
