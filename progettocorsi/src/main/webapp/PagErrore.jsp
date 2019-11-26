@@ -14,7 +14,7 @@
 if (stampa!=null){
 response.getWriter().append(stampa);}
 %>
-  
+
  
 </body>
 </html>
