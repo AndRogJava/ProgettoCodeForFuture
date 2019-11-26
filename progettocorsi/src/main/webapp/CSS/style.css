@@ -2,8 +2,18 @@
 
 .img{
 	background-image: url("../images/libri.jpg");
-	background-repeat:no-repeat;
+	background-repeat: no-repeat;
 	background-position: right;
+	background-size: 1950px 1760px;
+}
+
+.box{
+	text-align: center;
+	position: center;
+	border: solid;
+	border-color: #449D48;
+	background-color: white;
+	width: 30%;
 }
 
 ul {

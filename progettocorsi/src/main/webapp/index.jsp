@@ -10,7 +10,9 @@
 <body class="img">
 
 <header><jsp:include page="header.jsp"/></header>
-<h1 style="color:#0c6914" class="serif"> Benevenuto Admin!</h1>
+
+<div class="box">
+<h1 style="color:#0c6914" class="serif"> Benvenuto Admin!</h1>
 <h2 style="color:#0c6914" class="serif"> Per accedere alla tua pagina di gestione dei corsi effettua il login</h2>
 
 <form action="LoginServlet" method="POST">
@@ -20,14 +22,17 @@
 <br>
 <input type="submit" value="Login">
 
+
 <% if (session.getAttribute("error") != null) {
 				out.println(session.getAttribute("error"));
 			}
 %>
 
-<footer><jsp:include page="footer.jsp"/></footer>
-
 
 </form>
+<br> 
+</div>
+<footer><jsp:include page="footer.jsp"/></footer>
+
 </body>
 </html>
