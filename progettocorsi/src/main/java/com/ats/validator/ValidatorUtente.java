@@ -15,7 +15,7 @@ private static ResourceBundle bundle = ResourceBundle.getBundle("risorse/info");
 	 * regole di validazione per la registrazione dell'utente
 	 */
 	public static List<ErroreValidazione> validazioneUtente(HttpServletRequest request){
-		List<ErroreValidazione> lista = new ArrayList<>();
+		ArrayList<ErroreValidazione> lista = new ArrayList<ErroreValidazione>();
 		//Nome corsista
 		String nomecorsista = request.getParameter("nomecorsista");
 		if(nomecorsista == null || nomecorsista.length()==0)
