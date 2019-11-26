@@ -14,7 +14,7 @@ private static ResourceBundle bundle = ResourceBundle.getBundle("risorse/info");
 	/*
 	 * regole di validazione per la registrazione dell'utente
 	 */
-	public static List<ErroreValidazione> validazioneUtente(HttpServletRequest request){
+public static ArrayList<ErroreValidazione> validazioneUtente(HttpServletRequest request){
 		ArrayList<ErroreValidazione> lista = new ArrayList<ErroreValidazione>();
 		//Nome corsista
 		String nomecorsista = request.getParameter("nomecorsista");
@@ -71,6 +71,8 @@ private static ResourceBundle bundle = ResourceBundle.getBundle("risorse/info");
 		
 		DateTimeFormatter formatta = DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
 		
+		LocalDate newDate = inizio.plusDays(2);
+		
 		if (data_finecorso == null ||data_finecorso.length()==0) {
 			lista.add(new ErroreValidazione("data_finecorso", "data_finecorso " + bundle.getString("error.data.esistente")));
 		}
@@ -80,12 +82,18 @@ private static ResourceBundle bundle = ResourceBundle.getBundle("risorse/info");
 		else if (afterFine.isAfter(fine)) {
 			lista.add(new ErroreValidazione("data_finecorso", "data_finecorso " + bundle.getString("error.data.nascita"))); 
 		}
+		else if (newDate==inizio.plusDays(1) || newDate==inizio.plusDays(0)){
+			lista.add(new ErroreValidazione("data_finecorso", "data_finecorso " + bundle.getString("error.duration"))); 
+		}
 	
 		
 		//Commenti corso
 		String commenticorso = request.getParameter("commenticorso");
-		if(commenticorso.length()<30)
+		if(commenticorso.length()<200)
 			lista.add(new ErroreValidazione("commenticorso", bundle.getString("error.maxlength") + " 200"));
+		if (commenticorso == null ||commenticorso.length()==0) {
+			lista.add(new ErroreValidazione("commenticorso", "commenticorso" + bundle.getString("error.required")));
+		}
 		
 		//Precedenti formativi
 		String precedentiformativi = request.getParameter("precedentiformativi");
