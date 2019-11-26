@@ -317,24 +317,5 @@ public class DaoStatistiche {
 	
 }
 	
-//    private String getNomeCorsoById (int codcorso) throws DaoException, SQLException {
-//	String query= "select nomecorso from DATI_CORSI where codcorso=?";
-//	String corso= null;
-//	conn= ConnectionFactory.getInstance();
-//	try {
-//	prepStatement= conn.prepareStatement(query);
-//	prepStatement.setInt(1, codcorso);
-//	resultset = prepStatement.executeQuery();
-//	while(resultset.next()){
-//		corso= resultset.getNString("nomecorso");
-//		
-//	}
-//} catch (SQLException e) {
-//		throw new DaoException(e.getMessage());
-//
-//	}	
-//	
-//	return corso;
-//	
-//}
+
 	}
