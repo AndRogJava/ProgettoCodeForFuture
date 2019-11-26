@@ -223,38 +223,4 @@ public class DaoDatiCorsiImpl implements IDaoDatiCorsi {
 				throw new DaoException(sql.getMessage());
 			}
 	}
-	public LinkedList <DatiCorsi> getCorsobyNomeCorso (String nomecorso) throws  DaoException {
-		try {
-
-			String query="select * from DATI_CORSI where nomecorso=?";
-			conn=ConnectionFactory.getInstance();
-			prepStatement=conn.prepareStatement(query);
-			prepStatement.setString(1, nomecorso);
-			resultset=prepStatement.executeQuery();
-			LinkedList <DatiCorsi> listaCorsi = new LinkedList <DatiCorsi> ();
-			DatiCorsi corso = null;
-
-			
-			while(resultset.next()) {
-				
-				corso= new DatiCorsi ();
-				
-				corso.setCoddocente(resultset.getInt("coddocente"));
-				corso.setAulacorso(resultset.getNString("aulacorso"));
-				corso.setCommenticorso(resultset.getNString("commenticorso"));
-				corso.setCostocorso(resultset.getInt("costocorso"));
-				corso.setNomecorso(resultset.getNString("nomecorso"));
-				corso.setData_iniziocorso(resultset.getDate("data_iniziocorso").toLocalDate());
-				corso.setData_finecorso(resultset.getDate("data_finecorso").toLocalDate());
-				corso.setCodcorso(resultset.getInt("codcorso"));
-				listaCorsi.add(corso);
-				
-				
-		}
-			return listaCorsi;
-		    }
-		catch (SQLException sql)  {
-			throw new DaoException(sql.getMessage());
-		}
-}
 }

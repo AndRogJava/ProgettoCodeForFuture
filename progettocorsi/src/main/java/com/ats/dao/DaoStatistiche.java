@@ -8,8 +8,6 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 
 import com.ats.exception.DaoException;
@@ -19,7 +17,6 @@ import com.ats.model.DatiDocenti;
 import com.ats.utility.ConnectionFactory;
 
 public class DaoStatistiche {
-	private static final String String = null;
 	private Connection conn=null;
 	PreparedStatement prepStatement= null;
 	ResultSet resultset= null;
@@ -271,51 +268,6 @@ public class DaoStatistiche {
 		
 		return listaDocentiPerNomeCorso;
 	}
-
-
-
-
- 	
-	public HashMap <String, Integer> corsiConPostiDisponibili () throws DaoException {
-		
-		HashMap <String, Integer>  listaCorsiDisponibili = new HashMap <String, Integer>();
-		String query= "select count (CORSI_CORSISTI.codcorsista) partecipanti, DATI_CORSI.nomecorso from DATI_CORSI, CORSI_CORSISTI, DATI_CORSISTI WHERE DATI_CORSI.codcorso = CORSI_CORSISTI.codcorso and DATI_CORSISTI.codcorsista = CORSI_CORSISTI.codcorsista group by DATI_CORSI.nomecorso";
-		conn= ConnectionFactory.getInstance();
-		Integer partecipanti = 0;
-		String nomecorso = null;
-		final  int NUMERO_PARTECIPANTI= 12;
-//	//	LinkedList<String> listaCorsi = new LinkedList <String> ();
-		try {
-			
-		prepStatement= conn.prepareStatement(query);
-		resultset = prepStatement.executeQuery();
-
-		while(resultset.next()){
-		
-    		 partecipanti = resultset.getInt("partecipanti");
-    		 nomecorso = resultset.getString("nomecorso");
-    		
-    		
-    		 listaCorsiDisponibili.put(nomecorso, partecipanti);
-		
-    		 
- 		 if (partecipanti>NUMERO_PARTECIPANTI) {
-  			 System.out.println(nomecorso +":" + "Siamo spiacenti, il corso non ha più posti disponibili");
-   		 }else {
-   			 System.out.println(nomecorso + ":"+ "Il corso ha ancora posti disponibili!");
-   		 }
-  	 
-		}
-	} catch (SQLException e) {
-		throw new DaoException(e.getMessage());
-
-	}
-		
-
-		return listaCorsiDisponibili;
-		
+ 			
 	
 }
-	
-
-	}
