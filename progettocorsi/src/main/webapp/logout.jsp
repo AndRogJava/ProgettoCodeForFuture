@@ -15,19 +15,14 @@
 		<h1><font color="#0c6914">Hai eseguito con successo il logout</font></h1>
 		<a href="index.jsp">Torna alla Home Page</a>
 
-
 </div>
 <%
 		session.invalidate();
+
 	%>
-<footer><jsp:include page="footer.jsp"/></footer>
-	</body>
-
-
-
-	
-
-
-
 </body>
+
+
+<footer><jsp:include page="footer.jsp"/></footer>
+
 </html>

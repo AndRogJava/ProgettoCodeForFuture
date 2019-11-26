@@ -242,7 +242,7 @@ public class DaoStatistiche {
 	public LinkedList <DatiDocenti> docentiPerNomeCorsi(String nomecorso) throws DaoException{
 		
 		LinkedList <DatiDocenti> listaDocentiPerNomeCorso= new LinkedList <DatiDocenti> ();
-		DatiDocenti docentetmp = new DatiDocenti();
+		
 		try {
 		conn= ConnectionFactory.getInstance();
 		
@@ -253,6 +253,7 @@ public class DaoStatistiche {
 			prepStatement.setString(1, nomecorso);
 			resultset = prepStatement.executeQuery();
 			while(resultset.next()){
+				DatiDocenti docentetmp = new DatiDocenti();
 				docentetmp.setCoddocente(resultset.getInt("CODDOCENTE"));
 				docentetmp.setCognomedocente(resultset.getString("COGNOMEDOCENTE"));
 				docentetmp.setNomedocente(resultset.getString("NOMEDOCENTE"));
