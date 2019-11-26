@@ -33,9 +33,8 @@ public class StatisticheServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		RequestDispatcher rd=null;
-		
-		StatisticheService stSe = null;
-				
+	
+		StatisticheService stSe = null;		
 		try {
 			stSe = new StatisticheService();
 		} catch (DaoException e1) {
@@ -55,21 +54,20 @@ public class StatisticheServlet extends HttpServlet {
 		} catch (DaoException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
-		}
-		
-		
-	
+		}	
 		
 //		I.    Numero corsisti totali.		
-		int corsistiTot = 0;
+		int corsisti = 0;
 		try {
-			corsistiTot = stSe.CorsistiTotali();
+			corsisti = stSe.CorsistiTotali();
+			System.out.println(stSe.CorsistiTotali());
+			System.out.println(corsisti);
 		} catch (DaoException e) {
 			e.printStackTrace();
 		}
 				
-		session.setAttribute("corsistiTot", corsistiTot);
-		System.out.println("corsistiTot" + corsistiTot);
+		session.setAttribute("corsistiTot", corsisti);
+		System.out.println("corsistiTot" + corsisti);
 		rd=request.getRequestDispatcher("statistiche.jsp");
 		rd.forward(request, response);	
 		
@@ -81,8 +79,8 @@ public class StatisticheServlet extends HttpServlet {
 		} catch (DaoException e) {
 			e.printStackTrace();
 		}
-		session.setAttribute("corso", corso);
-		System.out.println("corso" + corso);
+		session.setAttribute("corsoPiuFreq", corso);
+		System.out.println("corsoPiuFreq" + corso);
 		rd=request.getRequestDispatcher("statistiche.jsp");
 		rd.forward(request, response);	
 		
@@ -94,8 +92,8 @@ public class StatisticheServlet extends HttpServlet {
 		} catch (DaoException e) {
 			e.printStackTrace();
 		}		
-		session.setAttribute("data", data);
-		System.out.println("data" + data);
+		session.setAttribute("dataInizio", data);
+		System.out.println("dataInizio" + data);
 		rd=request.getRequestDispatcher("statistiche.jsp");
 		rd.forward(request, response);	
 
@@ -154,36 +152,36 @@ public class StatisticheServlet extends HttpServlet {
 		 
 			
 //		VII.  Docente che può tenere più tipologie di corso
-		DatiDocenti docente = new DatiDocenti();
+		LinkedList<DatiDocenti> ListadocentiPiuCorsi = new LinkedList<DatiDocenti>();
 		try {
-			docente = stSe.DocentePiuCorsi();
+			ListadocentiPiuCorsi = stSe.DocentePiuCorsi();
 		} catch (DaoException e) {
 			e.printStackTrace();
 		}
-		session.setAttribute("docente", docente);
-		System.out.println("docente" + docente);
+		session.setAttribute("ListadocentiPiuCorsi", ListadocentiPiuCorsi);
+		System.out.println("ListadocentiPiuCorsi" + ListadocentiPiuCorsi);
 		rd=request.getRequestDispatcher("statistiche.jsp");
 		rd.forward(request, response);
 	
 			
 //		VIII. Corsi con posti disponibili
 		
-		LinkedList <DatiCorsi> listaCorsiDisp = new LinkedList <DatiCorsi>();
-		listaCorsiDisp = null;
-		try {
-			listaCorsiDisp = corsiService.listaCorsibyData();
-		} catch (DaoException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		session.setAttribute("listaCorsiDisp", listaCorsiDisp);
-		System.out.println("listaCorsiDisp" + listaCorsiDisp);
-		rd=request.getRequestDispatcher("statistiche.jsp");
-		rd.forward(request, response);
+//		LinkedList <DatiCorsi> listaCorsiDisp = new LinkedList <DatiCorsi>();
+//		listaCorsiDisp = null;
+//		try {
+//			listaCorsiDisp = corsiService.listaCorsibyData();
+//		} catch (DaoException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		session.setAttribute("listaCorsiDisp", listaCorsiDisp);
+//		System.out.println("listaCorsiDisp" + listaCorsiDisp);
+//		rd=request.getRequestDispatcher("statistiche.jsp");
+//		rd.forward(request, response);
 		
 		
 		

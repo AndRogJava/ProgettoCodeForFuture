@@ -36,8 +36,7 @@ public class DaoDatiAmministratoriImpl implements IDaoDatiAmministratori {
 			if(numeroRighe > 0) {
 				System.out.println("Amministratore aggiunto con successo!");
 			}
-			prepStatement.close();
-			conn.close();
+			
 		}catch (SQLException sql) {
 			
 			throw new DaoException(sql.getMessage());
@@ -60,8 +59,7 @@ public class DaoDatiAmministratoriImpl implements IDaoDatiAmministratori {
 		prepStatement.executeUpdate();
 		System.out.println("Amministratore modificato con successo!");
 		
-		 prepStatement.close();
-		conn.close();
+		 
 	}catch (SQLException sql) {
 		// TODO: handle exception
 		throw new DaoException(sql.getMessage());
@@ -79,8 +77,7 @@ public class DaoDatiAmministratoriImpl implements IDaoDatiAmministratori {
 			prepStatement.setInt(1, codadmin);
 			prepStatement.executeUpdate();
 			System.out.println("Amministratore cancellato con successo!");
-			prepStatement.close();
-			conn.close();
+			
 			}catch (SQLException sql) {
 				// TODO: handle exception
 				throw new DaoException(sql.getMessage());
@@ -114,8 +111,7 @@ public class DaoDatiAmministratoriImpl implements IDaoDatiAmministratori {
 				
 			}
 			prepStatement.executeUpdate();
-			prepStatement.close();
-			conn.close();
+			
 			return listaAmministratori;
 		}catch (SQLException sql) {
 			// TODO: handle exception
@@ -143,8 +139,7 @@ public class DaoDatiAmministratoriImpl implements IDaoDatiAmministratori {
 				amministratore.setCodadmin(resultset.getInt("codadmin"));
 		}
 			prepStatement.executeUpdate();
-			prepStatement.close();
-			conn.close();
+			
 			return amministratore;
 		    }
 		catch (SQLException sql)  {

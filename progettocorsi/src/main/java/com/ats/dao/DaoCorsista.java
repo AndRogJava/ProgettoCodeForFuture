@@ -38,8 +38,7 @@ public class DaoCorsista implements IDaoCorsista{
 			ps.setString(4, corsista.getPrecedentiformativi());
 
 			ps.executeUpdate();
-			ps.close();
-			conn.close();
+			
 		}
 		catch (SQLException e) {
 			throw new DaoException(e.getMessage());
@@ -58,8 +57,7 @@ public class DaoCorsista implements IDaoCorsista{
 			ps.setInt(4, corsista.getCodcorsista());
 
 			ps.executeUpdate();
-			ps.close();
-			conn.close();
+			
 		}
 		catch (SQLException e) {
 			throw new DaoException(e.getMessage());
@@ -75,8 +73,7 @@ public class DaoCorsista implements IDaoCorsista{
 			ps.setInt(1, codcorsista);
 
 			ps.executeUpdate();
-			ps.close();
-			conn.close();
+			
 		}
 		catch (SQLException e) {
 			throw new DaoException(e.getMessage());
@@ -103,15 +100,14 @@ public class DaoCorsista implements IDaoCorsista{
 				
 			}
 			ps.executeUpdate();
-			ps.close();
-			conn.close();
+			
 			return daticorsisti;
-			
-			
 
 		}
 		catch (SQLException e) {
+			e.printStackTrace();
 			throw new DaoException(e.getMessage());
+		
 		}
 		
 
@@ -137,8 +133,7 @@ public class DaoCorsista implements IDaoCorsista{
 
 			}
 			ps.executeUpdate();
-			ps.close();
-			conn.close();
+			
 			return tmp;
 		}
 		catch (SQLException e) {

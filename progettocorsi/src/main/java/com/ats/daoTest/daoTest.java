@@ -31,7 +31,7 @@ public class daoTest {
 			c2.setPrecedentiformativi("Matematica");
 		
 			DaoCorsista dc = new DaoCorsista();
-			//System.out.println(dc.selectAll());
+			System.out.println(dc.selectAll());
 			//System.out.println(dc.getCorsistaById(7));
 			//dc.addCorsista(c2);
 			//dc.updateCorsista(c2);

@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-    <%@ page import="com.ats.controller.*"%>
-    
-      <%@ page import="com.ats.dao.*"%>
-      
+    <%@ page import="com.ats.controller.*"%>    
     
     <%@ page import="java.time.LocalDate"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -57,13 +54,43 @@
     <td><% Integer commentiTotali = Integer.parseInt((String)(session.getAttribute("commentiTot"))); %></td>
 
   </tr>
- 
-    <tr>
-    <td> Docente che può tenere più tipologie di corso: </td>
-    <% String docente = session.getAttribute("docente").toString();  %> 
+
+
+</table>
+
+
+		<table> 
+	<caption>
+		<p> Docente che può tenere più tipologie di corso: </p>
+	</caption>
+	<thead>
+	
+	  <% session.getAttribute("Listadocenti");  %> 
+		<tr>
+			<td>Nome</td>
+			<td>Cognome</td>
+			<td>Curriculum</td>
+			<td>Codice</td>
+		</tr>
+	</thead>
+	
+	<%  session.getAttribute("Listadocenti"); %> 
+	
+    <c:forEach items="${listaCorsiDisp}" var="current"> 
+       <tr>
+           <td><c:out value="${current.nomedocente}" />        
+           <td><c:out value="${current.cognomedocente}" /> 
+           <td><c:out value="${current.cvdocente}" />    
+           <td><c:out value="${current.coddocente}" />                  
+       </tr>
+      </c:forEach>
+    
     </td>
   </tr>
+
 </table>
+
+
 
 <table> 
 	<caption>
@@ -94,46 +121,6 @@
   </tr>
 
 </table>
-
-
-<table> 
-	<caption>
-		<p>Elenco Corsi Disponibili: </p>
-	</caption>
-	<thead>
-		<tr>
-			<td>Codice</td>
-			<td>Codice Docente</td>
-			<td>Nome</td>
-			<td>Data inizio</td>
-			<td>Data fine</td>
-			<td>Costo </td>
-			<td>Commenti </td>
-			<td>Aula </td>	
-		</tr>
-	</thead>
-	<%  session.getAttribute("listaCorsiDisp"); %>
-    
-    <c:forEach items="${listaCorsiDisp}" var="current"> 
-    
-
-       <tr>
-           <td><c:out value="${current.codcorso}" />        
-           <td><c:out value="${current.coddocente}" /> 
-           <td><c:out value="${current.nomecorso}" />    
-           <td><c:out value="${current.data_iniziocorso}" />        
-           <td><c:out value="${current.data_finecorso}" /> 
-           <td><c:out value="${current.costocorso}" />  
-           <td><c:out value="${current.commenticorso}" /> 
-           <td><c:out value="${current.aulacorso}" />              
-        </tr>
-      </c:forEach>
-    
-    </td>
-  </tr>
-
-</table>
-
 
 
 </form>
