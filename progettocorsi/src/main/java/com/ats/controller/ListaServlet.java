@@ -49,7 +49,7 @@ System.out.println("stampalista" + listaTutti);
 } catch (DaoException e) {
 e.printStackTrace();
 }
-rd=request.getRequestDispatcher("JSP/lista.jsp");
+rd=request.getRequestDispatcher("lista.jsp");
 rd.forward(request, response);
 
 }

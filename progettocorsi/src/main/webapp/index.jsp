@@ -10,7 +10,7 @@
 <body class="img">
 
 <header><jsp:include page="header.jsp"/></header>
-<h1 style="color:#0c6914" class="serif"> Benevenuto Admin!</h1>
+<h1 style="color:#0c6914" class="serif"> Benvenuto Admin!</h1>
 <h2 style="color:#0c6914" class="serif"> Per accedere alla tua pagina di gestione dei corsi effettua il login</h2>
 
 <form action="LoginServlet" method="POST">
