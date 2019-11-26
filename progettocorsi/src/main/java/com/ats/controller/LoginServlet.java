@@ -33,8 +33,8 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		RequestDispatcher rd=null;
-		DatiAmministratoriService as=null;
+		RequestDispatcher rd= null;
+		DatiAmministratoriService as= null;
 		try {
 			as = new DatiAmministratoriService();
 		} catch (DaoException e1) {
@@ -53,12 +53,7 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("nomeadmin", nomeIns);		
 				session.setAttribute("codadmin", codice);
 				rd = request.getRequestDispatcher("lista.jsp");
-				rd = request.getRequestDispatcher("/ListaServlet");
-//				RequestDispatcher forward = request.getServletContext().getRequestDispatcher("/ListaServlet");
-//				rd.forward("ListaServlet", response);
-				//response.sendRedirect("http://localhost:8082/progettocorsi/ListaServlet");
 				rd.forward(request,response);
-
 
 			}else  {
 				String error = "Credenziali invalide!";
