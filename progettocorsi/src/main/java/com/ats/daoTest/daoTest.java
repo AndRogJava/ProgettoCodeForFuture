@@ -108,8 +108,13 @@ public class daoTest {
 //				e.printStackTrace();
 //			}
 
-			
-			
+//			try {
+//				ddci.listaCorsibyData();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
 	//TEST STATISTICHE
 			
 			StatisticheDTO sdto = new StatisticheDTO();
@@ -119,11 +124,11 @@ public class daoTest {
 			//System.out.println(ds.corsistiTotali());
 			//System.out.println(ds.durataMediaCorsi());
 			//System.out.println(ds.numeroCommenti());
-					System.out.println(ds.docentePiuCorsi());
+			//System.out.println(ds.docentePiuCorsi());
 			//System.out.println(ds.corsoPiuFrequentato());
 			//System.out.println(ds.dataInizioUltimoCorso());
-					//System.out.println(ds.docentiPerNomeCorsi("Informatica"));
-			//mgfkugqe
+			//System.out.println(ds.docentiPerNomeCorsi("Tedesco"));
+			
 	}
 	
 }
