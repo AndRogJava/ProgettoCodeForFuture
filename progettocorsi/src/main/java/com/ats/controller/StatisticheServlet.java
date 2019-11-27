@@ -124,8 +124,8 @@ public class StatisticheServlet extends HttpServlet {
 		} catch (DaoException e) {
 			e.printStackTrace();
 		}
-		session.setAttribute("listaCorsisti", listaCorsisti);
-		System.out.println("listaCorsisti" + listaCorsisti);
+		session.setAttribute("ListaCorsisti", listaCorsisti);
+		System.out.println("ListaCorsisti" + listaCorsisti);
 
 //		int codiceCorsista = Integer.parseInt((String)request.getParameter("codcorsista"));
 //		DatiCorsisti corsista = new DatiCorsisti();
@@ -165,8 +165,8 @@ public class StatisticheServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		session.setAttribute("listaCorsi", listaCorsi);
-		System.out.println("listaCorsi" + listaCorsi);
+		session.setAttribute("ListaCorsiDisp", listaCorsi);
+		System.out.println("ListaCorsiDisp" + listaCorsi);
 		rd = request.getRequestDispatcher("/statistiche.jsp");
 		rd.forward(request, response);
 	}
