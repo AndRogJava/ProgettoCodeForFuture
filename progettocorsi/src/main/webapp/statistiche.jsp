@@ -6,7 +6,7 @@
     <%@ page import = "java.util.LinkedList" %>
 
      <%@ page import="com.ats.dao.DaoStatistiche"%>
-      <%@ page import="com.ats.controller.StatisticheServlet"%>
+     <%@ page import="com.ats.controller.StatisticheServlet"%>
     
     
 <!DOCTYPE html>
@@ -14,6 +14,18 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Statistiche</title>
+
+<style>
+th, td {
+	border: 3px solid #111;
+	padding:8px;
+}
+thead {
+	background-color: #449D48;
+}
+
+</style>
+
 </head>
 <body class="img">
 
@@ -23,7 +35,7 @@
 
 <h2>Statistiche corsi</h2>
 
-<table>
+<table align = "center">
 
   <tr>
     <th> -- </th>
@@ -61,12 +73,12 @@
    
 </table>
 
-<table> 
+<br>
 
+<table align = "center"> 
 	<caption>
 		Elenco Corsisti: 
 	</caption>
-	
 	<thead>
 		<tr>
 			<td>Nome</td>
@@ -74,16 +86,20 @@
 			<td>Codice</td>
 		</tr>
 	</thead>
-
-
+		<%  session.getAttribute("listaCorsisti"); %>
+    <c:forEach items="${listaCorsisti}" var="current">    	
+     	<tr>
+	        <td><c:out value="${current.nomecorsista}" />    	
+	        <td><c:out value="${current.cognomecorsista}" /> 
+	        <td><c:out value="${current.codcorsista}" />                
+      	</tr>   	
+    </c:forEach>
 </table>
 
-
-<table> 
+<table align = "center"> 
 	<caption>
 		Docenti che possono tenere più corsi:
 	</caption>
-	
 	<thead>
 		<tr>
 			<td>Nome </td>
@@ -92,16 +108,34 @@
 			<td>Codice</td>			
 		</tr>
 	</thead>
-   <%session.getAttribute("ListadocentiPiuCorsi"); %>
+  		<%session.getAttribute("ListadocentiPiuCorsi"); %>
     <c:forEach items="${ListadocentiPiuCorsi}" var="current"> 
        <tr>
-          <td><c:out value="${current.nomedocente}" />           
-          <td><c:out value="${current.cognomedocente}" /> 
-          <td><c:out value="${current.cvdocente}" /> 
-          <td><c:out value="${current.coddocente}" />       
-        </tr>
-      </c:forEach>
+            <td><c:out value="${current.nomedocente}" />           
+            <td><c:out value="${current.cognomedocente}" /> 
+            <td><c:out value="${current.cvdocente}" /> 
+            <td><c:out value="${current.coddocente}" />       
+       </tr>
+     </c:forEach>
+</table>
 
+<table align = "center"> 
+	<caption>
+			Corsi con posti disponibili:
+	</caption>
+	<thead>
+	   <tr>
+			<td>Nome </td>
+			<td>Codice</td>		
+	   </tr>
+	</thead>
+		<%session.getAttribute("listaCorsi"); %>
+    <c:forEach items="${listaCorsi}" var="current"> 
+       <tr>
+          <td><c:out value="${current.nomecorso}" />           
+          <td><c:out value="${current.codcorso}" />        
+       </tr>
+    </c:forEach>
 </table>
 
 

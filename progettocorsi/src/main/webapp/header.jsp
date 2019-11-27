@@ -21,7 +21,7 @@
 	        if (nome!=null && codadmin!=0){%>
 	        <li class="serif" style="float:right"><a class="active" href="logout.jsp">Logout</a>
 	        <%session.invalidate();%></li>
-	        <li class="serif"><a href="statistiche.jsp">Statistiche</a></li>
+	        <li class="serif"><a href="StatisticheServlet">Statistiche</a></li>
 	        
 	     <% } %>
   
