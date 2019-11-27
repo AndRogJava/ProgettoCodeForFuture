@@ -45,20 +45,17 @@
   
   <tr>
     <td>Data di inizio dell'ultimo corso: </td>
-    <% session.getAttribute("dataInizio"); %>
-    <td> <% out.println("dataInizio"); %>  </td>
+    <td> <% out.println(session.getAttribute("dataInizio")); %>  </td>
   </tr>
   
   <tr>
-    <td> Durata media dei corsi ( in giorni lavorativi ) </td>
-    <% session.getAttribute("media"); %>
-    <td> <% out.println("media"); %></td>
+    <td> Durata media dei corsi </td>
+    <td> <% out.println(session.getAttribute("media")); %></td>
   </tr>
   
   <tr>
     <td>Numero di commenti presenti: </td>
-    <% session.getAttribute("commentiTot"); %>
-    <td><% out.println("commentiTot"); %></td>
+    <td><% out.println(session.getAttribute("commentiTot")); %></td>
   </tr>
  
    
@@ -95,9 +92,7 @@
 			<td>Codice</td>			
 		</tr>
 	</thead>
-	
-	<%  session.getAttribute("ListadocentiPiuCorsi"); %>
-    
+   <%session.getAttribute("ListadocentiPiuCorsi"); %>
     <c:forEach items="${ListadocentiPiuCorsi}" var="current"> 
        <tr>
           <td><c:out value="${current.nomedocente}" />           
