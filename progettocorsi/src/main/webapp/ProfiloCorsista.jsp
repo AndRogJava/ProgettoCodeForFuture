@@ -8,67 +8,64 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Profilo Corsista</title>
+
+<link href="CSS/style.css" rel="stylesheet" type="text/css">
+
 </head>
+
 <style>
-
-table {
-  width: 90%;
-  background-color: white;
-  border-collapse: collapse;
-  border-color: grey;
-  border-style: solid;
-  color: black;
-}
-td{
-border:1px solid black;
+table{
+	width: 35%;
+	background-color: white;
+	border-collapse: collapse;
+	border-color: #449D48;
+	border-style: solid;
+	color: black;
 }
 
-html{
-    height:90%;
-    min-height:90%;}
-body{
-    min-height:90%;}
-   
-h1,p {
-font-family: 'Open Sans', arial, sans-serif;
-font-weight: bold;
-color: black;
-
+td,th{
+	border:1px solid #449D48;
 }
+
 </style>
 
-<body class="img">>
+<body class="img">
+
 <header><jsp:include page="header.jsp"/></header>
 
 <form action="StatisticheServlet" method="GET">
-<% 
-out.println(session.getAttribute("listaCorsisti"));
- %>
 
 <table>
+
 <thead>
+
 <tr>
-
-<td>Nome</td>
-<td>Cognome</td>  
-<td>Codice</td>
-<td>Precedenti Formativi</td>
-
-
+<th>Nome</th>
+<th>Cognome</th>  
+<th>Codice</th>
+<th>Precedenti Formativi</th>
 </tr>
+
 </thead>
 
 <c:forEach items="${listaCorsisti}" var="items">
 <tr>
 <td><c:out value="${items.nomecorsista}" /></td>
 <td><c:out value="${items.cognomecorsista}" /></td>
-<td id="codice"><c:out value="${current.codcorsista}" />    
+<td><c:out value="${current.codcorsista}" />    
 <td><c:out value="${items.precedentiformativi}" /></td>
-
 </tr>
-     </c:forEach>
-     </table>
-     <footer><jsp:include page="footer.jsp"/></footer>
+</c:forEach>
+
+</table>
+     
+</form>  
+
+
+
+<footer><jsp:include page="footer.jsp"/></footer>
+     
+
 </body>
 </html>

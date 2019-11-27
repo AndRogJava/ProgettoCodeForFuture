@@ -8,7 +8,6 @@
 </head>
 <body class="img">
 
-<header><jsp:include page="header.jsp"/></header>
 
 <div class="box">
 <h1 style="color:#0c6914" class="serif"> Benvenuto Admin!</h1>
@@ -30,6 +29,7 @@
 </form>
 <br> 
 </div>
+
 <footer><jsp:include page="footer.jsp"/></footer>
 
 </body>
