@@ -3,13 +3,18 @@
      <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
     <%@ page import="java.time.LocalDate"%>
-    <%@ page import = "java.util.LinkedList" %>
+    <%@ page import = "java.util.*" %>
 
      <%@ page import="com.ats.dao.DaoStatistiche"%>
      <%@ page import="com.ats.controller.StatisticheServlet"%>
+     <%@ page import="com.ats.model.*"%>
     
     
 <!DOCTYPE html>
+<%LinkedList<DatiCorsisti> ListaCorsisti = (LinkedList<DatiCorsisti>)session.getAttribute("listaCorsisti");%>
+<%LinkedList<DatiDocenti> ListadocentiPiuCorsi = (LinkedList<DatiDocenti>)session.getAttribute("ListadocentiPiuCorsi"); %>
+<%HashMap<String, Integer>ListaCorsi = (HashMap<String, Integer>)session.getAttribute("listaCorsi"); %>
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -20,7 +25,7 @@ th, td {
 	border: 3px solid #111;
 	padding:8px;
 }
-thead {
+thead, th {
 	background-color: #449D48;
 }
 
@@ -84,14 +89,18 @@ thead {
 			<td>Nome</td>
 			<td>Cognome</td>
 			<td>Codice</td>
+			<td>Precedenti formativi</td>
 		</tr>
 	</thead>
-		<%  session.getAttribute("listaCorsisti"); %>
-    <c:forEach items="${listaCorsisti}" var="current">    	
+	
+	
+	<%=ListaCorsisti%>
+    <c:forEach items="${ListaCorsisti}" var="current">    	
      	<tr>
 	        <td><c:out value="${current.nomecorsista}" />    	
 	        <td><c:out value="${current.cognomecorsista}" /> 
-	        <td><c:out value="${current.codcorsista}" />                
+	        <td><c:out value="${current.codcorsista}" /> 
+	        <td><c:out value="${current.precedentiformativi}" /> 
       	</tr>   	
     </c:forEach>
 </table>
@@ -108,7 +117,9 @@ thead {
 			<td>Codice</td>			
 		</tr>
 	</thead>
-  		<%session.getAttribute("ListadocentiPiuCorsi"); %>
+	<tbody> 
+  		
+  	 <%=ListadocentiPiuCorsi%>	
     <c:forEach items="${ListadocentiPiuCorsi}" var="current"> 
        <tr>
             <td><c:out value="${current.nomedocente}" />           
@@ -117,6 +128,7 @@ thead {
             <td><c:out value="${current.coddocente}" />       
        </tr>
      </c:forEach>
+     </tbody>
 </table>
 
 <table align = "center"> 
@@ -125,11 +137,11 @@ thead {
 	</caption>
 	<thead>
 	   <tr>
-			<td>Nome </td>
+			<td>Nome</td>
 			<td>Codice</td>		
 	   </tr>
 	</thead>
-		<%session.getAttribute("listaCorsi"); %>
+		<%=ListaCorsi%>
     <c:forEach items="${listaCorsi}" var="current"> 
        <tr>
           <td><c:out value="${current.nomecorso}" />           

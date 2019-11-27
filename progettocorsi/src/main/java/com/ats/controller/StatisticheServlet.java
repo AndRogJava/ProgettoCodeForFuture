@@ -64,8 +64,6 @@ public class StatisticheServlet extends HttpServlet {
 				
 		session.setAttribute("corsistiTot", corsisti);
 		System.out.println("corsistiTot" + corsisti);
-//		rd=request.getRequestDispatcher("/statistiche.jsp");
-//		rd.forward(request, response);	
 		
 		
 //		II.   Nome del corso più frequentato
@@ -79,8 +77,6 @@ public class StatisticheServlet extends HttpServlet {
 		}
 		session.setAttribute("corsoPiuFreq", corso);
 		System.out.println("corsoPiuFreq" + corso);
-//		rd=request.getRequestDispatcher("/statistiche.jsp");
-//		rd.forward(request, response);	
 		
 		
 //		III.  Data di inizio ultimo corso
@@ -94,9 +90,6 @@ public class StatisticheServlet extends HttpServlet {
 		}		
 		session.setAttribute("dataInizio", data);
 		System.out.println("dataInizio" + data);
-//		rd=request.getRequestDispatcher("/statistiche.jsp");
-//		rd.forward(request, response);	
-
 		
 //		IV.   Durata media dei corsi ( in giorni lavorativi )
 		double media = 0;
@@ -109,8 +102,6 @@ public class StatisticheServlet extends HttpServlet {
 		}
 		session.setAttribute("media", media);
 		System.out.println("media" + media);
-//		rd=request.getRequestDispatcher("/statistiche.jsp");
-//		rd.forward(request, response);
 	
 		
 //		V.    Numero di commenti presenti	
@@ -124,8 +115,7 @@ public class StatisticheServlet extends HttpServlet {
 		}
 		session.setAttribute("commentiTot", commentiTot);
 		System.out.println("commentiTot" + commentiTot);
-//		rd= request.getRequestDispatcher("/statistiche.jsp");
-//		rd.forward(request, response);
+
 		
 //		VI.   Elenco corsisti	
 		LinkedList <DatiCorsisti> listaCorsisti = new LinkedList<DatiCorsisti>();
@@ -136,9 +126,7 @@ public class StatisticheServlet extends HttpServlet {
 		}
 		session.setAttribute("listaCorsisti", listaCorsisti);
 		System.out.println("listaCorsisti" + listaCorsisti);
-//		rd=request.getRequestDispatcher("/statistiche.jsp");
-//		rd.forward(request, response);
-		
+
 //		int codiceCorsista = Integer.parseInt((String)request.getParameter("codcorsista"));
 //		DatiCorsisti corsista = new DatiCorsisti();
 //		
@@ -164,9 +152,6 @@ public class StatisticheServlet extends HttpServlet {
 		}
 		session.setAttribute("ListadocentiPiuCorsi", ListadocentiPiuCorsi);
 		System.out.println("ListadocentiPiuCorsi" + ListadocentiPiuCorsi);
-//		rd=request.getRequestDispatcher("/statistiche.jsp");
-//		rd.forward(request, response);
-	
 			
 //		VIII. Corsi con posti disponibili
 		
