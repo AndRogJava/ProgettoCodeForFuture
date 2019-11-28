@@ -31,7 +31,7 @@ public class daoTest {
 			c2.setPrecedentiformativi("Matematica");
 		
 			DaoCorsista dc = new DaoCorsista();
-			System.out.println(dc.selectAll());
+			//System.out.println(dc.selectAll());
 			//System.out.println(dc.getCorsistaById(7));
 			//dc.addCorsista(c2);
 			//dc.updateCorsista(c2);
@@ -124,7 +124,7 @@ public class daoTest {
 			//System.out.println(ds.corsistiTotali());
 			//System.out.println(ds.durataMediaCorsi());
 			//System.out.println(ds.numeroCommenti());
-			//System.out.println(ds.docentePiuCorsi());
+			System.out.println(ds.docentePiuCorsi());
 			//System.out.println(ds.corsoPiuFrequentato());
 			//System.out.println(ds.dataInizioUltimoCorso());
 			//System.out.println(ds.docentiPerNomeCorsi("Tedesco"));
