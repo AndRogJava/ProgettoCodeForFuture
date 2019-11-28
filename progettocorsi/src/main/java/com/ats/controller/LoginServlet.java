@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
 		DatiAmministratori amministratore = new DatiAmministratori();
 		String nomeIns = request.getParameter("nomeadmin");
 		int codice = Integer.parseInt(request.getParameter("codadmin"));
-	
+		
 		
 		try {
 			amministratore = as.getAmministratorebyUsername(codice);
@@ -52,26 +52,23 @@ public class LoginServlet extends HttpServlet {
 			if (amministratore!=null  && amministratore.getCodadmin()==codice && amministratore.getNomeadmin().equalsIgnoreCase(nomeIns)) {
 				session.setAttribute("nomeadmin", nomeIns);		
 				session.setAttribute("codadmin", codice);
-				rd = request.getRequestDispatcher("lista.jsp");
+				rd = request.getRequestDispatcher("ListaServlet");	
 				rd.forward(request,response);
-
+				
 			}else  {
 				String error = "Credenziali invalide!";
 				session.setAttribute ("error", error);
 				rd = request.getRequestDispatcher("index.jsp");
 				rd.forward(request,response);
 			}
-
-
 		} catch (DaoException sql) {
 			sql.printStackTrace(); 
 			sql.getMessage();
 			rd = request.getRequestDispatcher("PagErrore.jsp");
-			session.setAttribute("Errore","Siamo spiacenti, si è verificato un errore durante il login.");
+			session.setAttribute("Errore","Siamo spiacenti, si Ã¨ verificato un errore durante il login.");
 			rd.forward(request, response);
 			sql.printStackTrace();
 		}
-
 		
 		}
 
