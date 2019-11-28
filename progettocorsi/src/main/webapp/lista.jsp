@@ -42,7 +42,7 @@ thead {
 		<tr>
 			<td>${current.nomecorsista}</td>
 			<td>${current.cognomecorsista}</td>
-			<td> <a href="AddCorso.jsp?codcorsista=${current.codcorsista }"> Aggiungi corso </a>
+			<td> <a href="AddCorso.jsp?codcorsista=${current.codcorsista }"> Aggiungi corso! </a>
 	
 		</tr>	
 	</c:forEach>
