@@ -48,7 +48,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 				session.setAttribute("lista", lista);
 				System.out.println("lista" + lista);
 				 
-				rd=request.getRequestDispatcher("listOne.jsp");
+				rd=request.getRequestDispatcher("lista.jsp");
 				rd.forward(request, response);
 				
 			} catch (DaoException e) {
