@@ -36,6 +36,8 @@ td,th{
 
 <form action="StatisticheServlet" method="GET">
 
+<img src="images/userprova.jpg" width="150px">
+
 <table>
 
 <thead>
