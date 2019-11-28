@@ -14,9 +14,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>lista</title>
+
+
 </head>
 
 <body class="img">
+
+<header><jsp:include page="header.jsp"/></header>
 <style>
 th, td {
 	border: 3px solid #111;
@@ -27,6 +31,9 @@ thead {
 	background-color: #449D48;
 }
 </style>
+
+
+
 <table align="center">
 
 	<thead>
