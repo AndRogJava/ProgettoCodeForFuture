@@ -29,7 +29,7 @@ public class StatisticheServlet extends HttpServlet {
         super();
         
     }
-
+ 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Sono nella servlet - get");
 		HttpSession session = request.getSession();
