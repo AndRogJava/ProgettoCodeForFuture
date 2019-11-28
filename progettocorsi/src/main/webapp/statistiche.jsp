@@ -96,7 +96,7 @@ thead, th {
      </c:forEach>
      </tbody>
 </table>
-<br>
+<br><br>
 <table align = "center"> 
 	<caption>
 			Corsi con posti disponibili:
@@ -107,10 +107,13 @@ thead, th {
 			<td>Codice </td>	
 	   </tr>
 	</thead>
-	<tbody> 
-											
-
- 	</tbody>	
+	<c:forEach items="${listaCorsi.map}" var="current4">   
+    
+     	<tr> 
+     	 <td> <c:out value="${current4.nomecorso}" /></td>
+	        <td><c:out value="${current4.codcorso}" /> </td>
+      	</tr>   	
+    </c:forEach>
 </table>  	      
 
 
