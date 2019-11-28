@@ -5,6 +5,16 @@
 <web-app>
 
   <display-name>index.jsp</display-name>
+  <servlet>
+  	<servlet-name>CreaCorsistaServlet</servlet-name>
+  	<display-name>CreaCorsistaServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.ats.controller.CreaCorsistaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CreaCorsistaServlet</servlet-name>
+  	<url-pattern>/CreaCorsistaServlet</url-pattern>
+  </servlet-mapping>
  
 </web-app>
 
