@@ -5,6 +5,7 @@
     
     <%@ page import="java.time.LocalDate"%>
     <%@ page import = "java.util.*" %>
+    <%@ page import = "java.lang.*" %>
 
      <%@ page import="com.ats.dao.DaoStatistiche"%>
      <%@ page import="com.ats.controller.StatisticheServlet"%>
@@ -77,27 +78,6 @@ thead, th {
 
 <br>
 
-<table align = "center"> 
-	<caption>
-		Elenco Corsisti: 
-	</caption>
-	<thead>
-		<tr>
-			<td>Nome</td>
-			<td>Cognome</td>
-			<td>Codice</td>
-			<td>Precedenti formativi</td>
-		</tr>
-	</thead>
-    <c:forEach items="${ListaCorsisti}" var="current1">    	
-     	<tr>
-	        <td><c:out value="${current1.nomecorsista}" />    	
-	        <td><c:out value="${current1.cognomecorsista}" /> 
-	        <td><c:out value="${current1.codcorsista}" /> 
-	        <td><c:out value="${current1.precedentiformativi}" /> 
-      	</tr>   	
-    </c:forEach>
-</table>
 <br>
 <table align = "center"> 
 	<caption>
@@ -128,12 +108,39 @@ thead, th {
 	   </tr>
 	</thead>
 	<tbody> 
-
+											
 
  	</tbody>	
 </table>  	      
 
+
+<table align = "center"> 
+	<caption>
+	Elenco Corsisti:
+	</caption>
+	<thead>
+		<tr>
+			<td>Nome</td>
+			<td>Cognome</td>
+			<td>Codice</td>
+		</tr>
+	</thead>
+    <c:forEach items="${ListaCorsisti}" var="current1">   
+    
+     	<tr> 
+     	 <td> <a href="ProfiloCorsista.jsp"><c:out value="${current1.nomecorsista}" /></a></td>
+  
+	        <td><c:out value="${current1.cognomecorsista}" /> 
+	        <td><c:out value="${current1.codcorsista}" /> 
+	  
+      	</tr>   	
+    </c:forEach>
+</table>
+
+ 
+
 </form>
+<button type="submit" form="formPOST" value="Submit">Visualizza elenco corsisti</button>
 
 <footer><jsp:include page="footer.jsp"/></footer>
 </body>

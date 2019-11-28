@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.lang.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -44,7 +45,6 @@ public class StatisticheServlet extends HttpServlet {
 		} catch (DaoException e1) {
 			e1.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -116,7 +116,6 @@ public class StatisticheServlet extends HttpServlet {
 		session.setAttribute("commentiTot", commentiTot);
 		System.out.println("commentiTot" + commentiTot);
 
-		
 //		VI.   Elenco corsisti	
 		LinkedList <DatiCorsisti> listaCorsisti = new LinkedList<DatiCorsisti>();
 		try {
@@ -126,20 +125,25 @@ public class StatisticheServlet extends HttpServlet {
 		}
 		session.setAttribute("ListaCorsisti", listaCorsisti);
 		System.out.println("ListaCorsisti" + listaCorsisti);
-
-//		int codiceCorsista = Integer.parseInt((String)request.getParameter("codcorsista"));
+		
+//		String codCorsist = request.getParameter("trackingId");
+//		int codiceCorsista = Integer.parseInt(codCorsist);
 //		DatiCorsisti corsista = new DatiCorsisti();
 //		
 //		 try {
 //			corsista = cs.getCorsistaById(codiceCorsista);	
 //			
 //			if (corsista!=null) {
-//				cs.getCorsistaById(codiceCorsista);
-//				rd = request.getRequestDispatcher("ProfiloCorsista.jsp");				
+//				corsista = cs.getCorsistaById(codiceCorsista);
+//				session.setAttribute("CodiceCorsista", codiceCorsista);
+//				rd = request.getRequestDispatcher("/ProfiloCorsista.jsp");
+//				rd.forward(request, response);
 //			}
 //		} catch (DaoException e) {
 //			e.printStackTrace();
 //		}
+		
+		
 		 
 			
 //		VII.  Docente che può tenere più tipologie di corso
@@ -157,6 +161,7 @@ public class StatisticheServlet extends HttpServlet {
 		
 		HashMap <String, Integer>  listaCorsi = new HashMap <String, Integer>();
 		listaCorsi = null;
+
 		try {
 			listaCorsi = stSe.corsiConPostiDisponibili();
 			System.out.println(listaCorsi);
@@ -167,6 +172,7 @@ public class StatisticheServlet extends HttpServlet {
 		}
 		session.setAttribute("ListaCorsiDisp", listaCorsi);
 		System.out.println("ListaCorsiDisp" + listaCorsi);
+		
 		rd = request.getRequestDispatcher("/statistiche.jsp");
 		rd.forward(request, response);
 	}
@@ -175,7 +181,48 @@ public class StatisticheServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-		}
-
+	//	doGet(request, response);
+//		System.out.println("Sono nella servlet - post");
+//		HttpSession Hsession = request.getSession();
+//		RequestDispatcher rD=null;
+//
+//		CorsistaService cS = null;
+//		try {
+//			cS = new CorsistaService();
+//			
+//		} catch (DaoException e1) {
+//			e1.printStackTrace();
+//		}
+//		
+//		
+////		LinkedList <DatiCorsisti> listaCorsisti = new LinkedList<DatiCorsisti>();
+////		try {
+////			listaCorsisti = cS.selectAll();
+////		} catch (DaoException e) {
+////			e.printStackTrace();
+////		}
+////		Hsession.setAttribute("ListaCorsisti", listaCorsisti);
+////		System.out.println("ListaCorsisti" + listaCorsisti);
+//
+//		String codCorsist = request.getParameter("trackingId");
+//		int codiceCorsista = Integer.parseInt(codCorsist);
+//		DatiCorsisti corsista = new DatiCorsisti();
+//		
+//		 try {
+//			corsista = cS.getCorsistaById(codiceCorsista);	
+//			
+//			if (corsista!=null) {
+//				corsista = cS.getCorsistaById(codiceCorsista);
+//				Hsession.setAttribute("CodiceCorsista", codiceCorsista);
+//				rD = request.getRequestDispatcher("/ProfiloCorsista.jsp");
+//				rD.forward(request, response);
+//			}
+//		} catch (DaoException e) {
+//			e.printStackTrace();
+//		}
+		
+		
+		
 	}
+
+}
