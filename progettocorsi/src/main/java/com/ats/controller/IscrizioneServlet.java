@@ -173,7 +173,7 @@ public class IscrizioneServlet extends HttpServlet {
 					System.out.println("stampa corso definitvo" + corsoDefinitivo);
 					session.setAttribute("corsoDefinitivo", corsoDefinitivo);
 					request.getRequestDispatcher("InserisciCorsista.jsp").forward(request,response);
-			
+		
 				
 				
 			}
