@@ -49,7 +49,7 @@ thead {
 	 </table>
 	 <div>
 	 <a href="AddCorso.jsp">
-	 <input type="button" name="Aggiungi corso" value="aggiungiCorso">
+	 <input type="button" name="Aggiungi corso" value="aggiungicorso">
 	 </a>
 	 </div>
 <footer><jsp:include page="footer.jsp" /></footer>
