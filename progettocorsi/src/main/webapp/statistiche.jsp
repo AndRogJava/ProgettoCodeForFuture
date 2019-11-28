@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ page isELIgnored="false" %>
     
     <%@ page import="java.time.LocalDate"%>
     <%@ page import = "java.util.*" %>
@@ -11,10 +12,6 @@
     
     
 <!DOCTYPE html>
-<%LinkedList<DatiCorsisti> ListaCorsisti = (LinkedList<DatiCorsisti>)session.getAttribute("listaCorsisti");%>
-<%LinkedList<DatiDocenti> ListadocentiPiuCorsi = (LinkedList<DatiDocenti>)session.getAttribute("ListadocentiPiuCorsi"); %>
-<%HashMap<String, Integer>ListaCorsi = (HashMap<String, Integer>)session.getAttribute("listaCorsi"); %>
-
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -92,64 +89,49 @@ thead, th {
 			<td>Precedenti formativi</td>
 		</tr>
 	</thead>
-	
-	
-	<%=ListaCorsisti%>
-    <c:forEach items="${ListaCorsisti}" var="current">    	
+    <c:forEach items="${ListaCorsisti}" var="current1">    	
      	<tr>
-	        <td><c:out value="${current.nomecorsista}" />    	
-	        <td><c:out value="${current.cognomecorsista}" /> 
-	        <td><c:out value="${current.codcorsista}" /> 
-	        <td><c:out value="${current.precedentiformativi}" /> 
+	        <td><c:out value="${current1.nomecorsista}" />    	
+	        <td><c:out value="${current1.cognomecorsista}" /> 
+	        <td><c:out value="${current1.codcorsista}" /> 
+	        <td><c:out value="${current1.precedentiformativi}" /> 
       	</tr>   	
     </c:forEach>
 </table>
-
+<br>
 <table align = "center"> 
 	<caption>
 		Docenti che possono tenere più corsi:
 	</caption>
 	<thead>
 		<tr>
-			<td>Nome </td>
-			<td>Cognome</td>
-			<td>Curriculum</td>
-			<td>Codice</td>			
+			<td>Nome </td>		
 		</tr>
 	</thead>
 	<tbody> 
-  		
-  	 <%=ListadocentiPiuCorsi%>	
-    <c:forEach items="${ListadocentiPiuCorsi}" var="current"> 
+    <c:forEach items="${ListadocentiPiuCorsi}" var="current2"> 
        <tr>
-            <td><c:out value="${current.nomedocente}" />           
-            <td><c:out value="${current.cognomedocente}" /> 
-            <td><c:out value="${current.cvdocente}" /> 
-            <td><c:out value="${current.coddocente}" />       
+            <td><c:out value="${current2.nomedocente}" />               
        </tr>
      </c:forEach>
      </tbody>
 </table>
-
+<br>
 <table align = "center"> 
 	<caption>
 			Corsi con posti disponibili:
 	</caption>
 	<thead>
 	   <tr>
-			<td>Nome</td>
-			<td>Codice</td>		
+			<td>Nome </td>
+			<td>Codice </td>	
 	   </tr>
 	</thead>
-		<%=ListaCorsi%>
-    <c:forEach items="${listaCorsi}" var="current"> 
-       <tr>
-          <td><c:out value="${current.nomecorso}" />           
-          <td><c:out value="${current.codcorso}" />        
-       </tr>
-    </c:forEach>
-</table>
+	<tbody> 
 
+
+ 	</tbody>	
+</table>  	      
 
 </form>
 

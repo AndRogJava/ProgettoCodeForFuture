@@ -28,13 +28,22 @@ td,th{
 	border:1px solid #449D48;
 }
 
+.allineatab{
+	text-align: center;
+}
+
 </style>
 
 <body class="img">
 
 <header><jsp:include page="header.jsp"/></header>
 
+<div class="userpic" >
 <form action="StatisticheServlet" method="GET">
+
+<img src="images/userprova.jpg" width="150px">
+
+<center>
 
 <table>
 
@@ -59,10 +68,12 @@ td,th{
 </c:forEach>
 
 </table>
+ 
+ </center>
      
 </form>  
 
-
+</div>
 
 <footer><jsp:include page="footer.jsp"/></footer>
      
