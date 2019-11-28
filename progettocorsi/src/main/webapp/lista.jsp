@@ -47,6 +47,7 @@ thead {
 <c:forEach items="${lista}" var="current">
 		
 		<tr>
+		    <td>${current.codcorsista}</td>
 			<td>${current.nomecorsista}</td>
 			<td>${current.cognomecorsista}</td>
 			<td> <a href="AddCorso.jsp?codcorsista=${current.codcorsista }"> Aggiungi corso! </a>
