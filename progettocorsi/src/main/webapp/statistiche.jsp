@@ -105,19 +105,13 @@ thead, th {
 	</caption>
 	<thead>
 		<tr>
-			<td>Nome </td>
-			<td>Cognome</td>
-			<td>Curriculum</td>
-			<td>Codice</td>			
+			<td>Nome </td>		
 		</tr>
 	</thead>
 	<tbody> 
     <c:forEach items="${ListadocentiPiuCorsi}" var="current2"> 
        <tr>
-            <td><c:out value="${current2.nomedocente}" />           
-            <td><c:out value="${current2.cognomedocente}" /> 
-            <td><c:out value="${current2.cvdocente}" /> 
-            <td><c:out value="${current2.coddocente}" />       
+            <td><c:out value="${current2.nomedocente}" />               
        </tr>
      </c:forEach>
      </tbody>
@@ -134,15 +128,7 @@ thead, th {
 	   </tr>
 	</thead>
 	<tbody> 
-	
 
-		<c:forEach var="entry" items="${pageScope.ListaCorsiDisp}">
-		 <tr>
-			<td><c:out value="${entry.nomecorso}"/></td> 
-			<td><c:out value="${entry.codcorso}"/> </td>
-		</tr> 
-		</c:forEach>
-	
 
  	</tbody>	
 </table>  	      
