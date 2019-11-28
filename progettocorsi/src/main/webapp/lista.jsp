@@ -42,9 +42,15 @@ thead {
 		<tr>
 			<td>${current.nomecorsista}</td>
 			<td>${current.cognomecorsista}</td>
+			
 	
 		</tr>	
 	</c:forEach>
 	 </table>
+	 <div>
+	 <a href="AddCorso.jsp">
+	 <input type="button" name="Aggiungi corso" value="aggiungiCorso">
+	 </a>
+	 </div>
 <footer><jsp:include page="footer.jsp" /></footer>
 </html>
