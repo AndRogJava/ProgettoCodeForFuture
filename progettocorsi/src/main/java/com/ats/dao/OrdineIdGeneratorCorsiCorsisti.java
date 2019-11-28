@@ -50,6 +50,5 @@ public class OrdineIdGeneratorCorsiCorsisti implements IdGeneratorInterface{
 
 		}
 		return id;	
-
 	}
 }

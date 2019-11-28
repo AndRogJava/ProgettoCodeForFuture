@@ -215,7 +215,6 @@
 <c:out value="${corsoDefinitivo.data_finecorso}"/>
 
 
-
 <br>
 <b>Aula Corso:</b><br>
 <br>
