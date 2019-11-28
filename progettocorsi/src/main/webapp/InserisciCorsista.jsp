@@ -11,16 +11,17 @@
 
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="CSS/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   
+	
 <title>Inserisci Corsista</title>
 
- 
-	 
 		   	<script type="text/javascript">
-			
+		   	
+		   
+
 				$(document).ready(function(){
 				
 					$('#my_radio_box').change(function(){
@@ -53,21 +54,12 @@
 					
 					$('#date').change(function(){
 						
-						
 						//var e = getParameterByName('calendario');
 						selected_value_date = document.getElementById("date").value;
 							//$("input[name='date']:checked").val();
 			            alert(selected_value_date);
 						
-							//document.querySelector("#my_radio_box_dateInizio");
-						
-						
-						//selected_value_date = $("option[name='my_date']:selected").val();
-						//var selected_value_date= e.options[e.selectedIndex].value;
-						//var selected_value_date= e.value;
-						//document.querySelector('.selected_value_date').textContent=selected_value_date;
-			          //  alert(e);
-			            
+			         
 			            console.log('sono una funzione 2');
 			        	
 
@@ -87,31 +79,41 @@
 					});
 				});
 				
-				/*jQuery(function(){
-					   
-				    var enableDays = ["7-8-2019"];
-				   
-				    function enableAllTheseDays(date) {
-				        var sdate = $.datepicker.formatDate( 'd-m-yy', date)
-				        console.log(sdate)
-				        if($.inArray(sdate, enableDays) != -1) {
-				            return [true];
-				        }
-				        return [false];
-				    }
-				   
-				    $('#datepicker').datepicker({dateFormat: 'dd-mm-yy', beforeShowDay: enableAllTheseDays});
-				})
-				*/
+
+				</script>
 				
-				  </script>
-				<script>
+				 <script>
+				            $(document).ready(function(){
+				                document.getElementById("nomecorso").value = sessionStorage.getItem("item1");
+				            });
+				        </script>
+				        <script>
+				            $(window).on('beforeunload', function() {
+				            	sessionStorage.setItem("item1",document.getElementById("nomecorso").value);
+				            });
+
+				        </script>
+				        <script>
+				            $(document).ready(function(){
+				                document.getElementById("my_options").value = sessionStorage.getItem("item2");
+				            });
+				        </script>
+				        <script>
+				            $(window).on('beforeunload', function() {
+				            	sessionStorage.setItem("item2",document.getElementById("my_options").value);
+				            });
+
+				        </script>
+				         
+	<script>
   $( function() {
     $( "#date" ).datepicker();
   } );
   </script>
-		 
-			
+  
+  
+  
+		       
 </head>
 
 
@@ -127,7 +129,7 @@
 	
 	
 <!-- FINE BLOCCO 1 --><!-- INIZIO BLOCCO 2: inserisco nome corso, creo linkedlist corsi e linked list docebti. salvo lList docenti in un attr. di sessione-->
-<b>Nome Corso:</b><input placeholder=" " type="text" name="nomecorso" maxlength="30" required><br>
+<b>Nome Corso:</b><input placeholder=" " type="text" name="nomecorso" id= "nomecorso" maxlength="30" required><br>
 <br>
 
 <input type="submit" name=" Bottone" value="Carica Dati Corso"> <br>
@@ -138,6 +140,7 @@
 <!-- INIZIO BLOCCO 3: Visualizzazione lista docenti che tengono i corsi con quel nomeCorso e scelta docenti. Preparazione lista di date inizio possibili. -->
 
 <!-- <form action="IscrizioneCorsistaServlet" method="POST" name="modulo"> -->
+
 <b><i>Docenti:</i></b>
 <br>
 
@@ -147,13 +150,11 @@
 
  %>
 
-
-
 <form id="my_radio_box" action="IscrizioneCorsistaServlet" method="POST" name="modulo">
 		    <c:forEach items="${docentiPerNomeCorsi}" var="Docenti"> 
 		   
 		   
-		    <input type="radio" name="my_options" value="${Docenti.nomedocente}" /> <c:out value="${Docenti.nomedocente}" />
+		    <input type="radio" name="my_options" id="my_options" value="${Docenti.nomedocente}" /> <c:out value="${Docenti.nomedocente}" />
 		    
 		    
 		    </c:forEach>
@@ -170,12 +171,9 @@
  session.getAttribute("listaCorsiFinale");
 
  %>
-
-
 	
 <b>Data Inizio Corso:</b> <!-- <form id="my_radio_box_dateInizio" action="IscrizioneCorsistaServlet" method="POST" name="modulo"> -->
 
-	
 
 <p>Date: <input type="text" id="date" name="calendario"></p>
 	
@@ -211,6 +209,7 @@
 		
 <b>Data Fine Corso:</b>
 <br>
+
 <%  session.getAttribute("corsoDefinitivo");%>
 <c:out value="${corsoDefinitivo.data_finecorso}"/>
 

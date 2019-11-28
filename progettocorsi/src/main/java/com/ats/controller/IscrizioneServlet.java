@@ -90,13 +90,13 @@ public class IscrizioneServlet extends HttpServlet {
 		
 		
 			//VALIDAZIONE
-		ArrayList<ErroreValidazione> lista = new ArrayList<ErroreValidazione>();
-		lista=ValidatorUtente.validazioneUtente(request);
-		if(lista.size()!=0) {
-			request.setAttribute("lista",lista);
-			getServletContext().getRequestDispatcher("/WEB-INF/InserisciCorsista.jsp").forward(request,response);
-		}
-		
+//		ArrayList<ErroreValidazione> lista = new ArrayList<ErroreValidazione>();
+//		lista=ValidatorUtente.validazioneUtente(request);
+//		if(lista.size()!=0) {
+//			request.setAttribute("lista",lista);
+//			getServletContext().getRequestDispatcher("/WEB-INF/InserisciCorsista.jsp").forward(request,response);
+//		}
+//		
 
 	} 
 
