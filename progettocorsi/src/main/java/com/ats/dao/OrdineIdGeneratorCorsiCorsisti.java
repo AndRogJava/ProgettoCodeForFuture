@@ -35,4 +35,21 @@ public class OrdineIdGeneratorCorsiCorsisti implements IdGeneratorInterface{
 		return id;	
 
 	}
+	
+	
+	public int getCurrId() throws DaoException {
+		int id = 0; 
+		try{
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery("select CorsoCorsista_Seq.currval from dual");
+			rs.next();
+			id = rs.getInt(1);
+		 
+		} catch (SQLException sql) {
+			System.out.println("errore");
+
+		}
+		return id;	
+
+	}
 }

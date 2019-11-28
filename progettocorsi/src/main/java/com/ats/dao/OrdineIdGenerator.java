@@ -40,4 +40,20 @@ public class OrdineIdGenerator implements IdGeneratorInterface{
 		return id;	
 
 	}
+	public int getCurrIdCorsista() throws DaoException {
+		int id = 0; 
+		try{
+			conn =  getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery("select DATI_CORSISTI_codcorsista_Seq.currval from dual");
+			rs.next();
+			id = rs.getInt(1);
+		 
+		} catch (SQLException sql) {
+			System.out.println("errore");
+
+		}
+		return id;	
+
+	}
 }
