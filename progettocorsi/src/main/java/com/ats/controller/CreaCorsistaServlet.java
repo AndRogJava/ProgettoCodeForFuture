@@ -107,6 +107,7 @@ public class CreaCorsistaServlet extends HttpServlet {
 		rd= request.getRequestDispatcher("lista.jsp");
 		rd.forward(request, response);
 		
+		
 	}
 
 }

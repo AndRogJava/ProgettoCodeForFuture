@@ -14,9 +14,8 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
 <title>Inserisci Corsista</title>
-
- 
 
  
 	 
@@ -220,7 +219,7 @@
 <br>
 <b>Aula Corso:</b><br>
 <br>
-<c:out value="${corsoDefinitivo.aulacorso}"/>
+<c:out value="${corsoDefinitivo.aulacorso}"/> <br>
 
 <b><i>Commenti Corso</i></b> 
 <br>
