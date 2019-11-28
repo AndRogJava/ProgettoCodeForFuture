@@ -13,6 +13,8 @@
 <ul>
 
 
+
+
   <% String nome =(String)session.getAttribute("nomeadmin");
 	        if (nome!=null) { %>
 	        <li class="serif" style="float:right"><a class="active"><%=nome%></a></li>   
